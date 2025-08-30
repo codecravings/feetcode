@@ -176,7 +176,7 @@ export default function ModernNavbar() {
                 className="p-2 rounded-lg bg-muted hover:bg-accent transition-colors"
                 title={`Current: ${theme} (${resolvedTheme})`}
               >
-                {React.createElement(themeIcons[theme], { className: "h-5 w-5" })}
+                {React.createElement(themeIcons[theme as keyof typeof themeIcons], { className: "h-5 w-5" })}
               </button>
             </div>
 

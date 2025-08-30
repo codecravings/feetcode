@@ -1,28 +1,24 @@
 stage-0
 RUN npm run build
-12s
+6s
 npm warn config production Use `--omit=dev` instead.
 > feetcode@0.1.0 build
 > next build
-Attention: Next.js now collects completely anonymous telemetry regarding usage.
-This information is used to shape Next.js' roadmap and prioritize features.
-You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-https://nextjs.org/telemetry
    ▲ Next.js 14.0.0
    Creating an optimized production build ...
  ✓ Compiled successfully
    Linting and checking validity of types ...
 Failed to compile.
-./components/ViralStats.tsx:4:56
-Type error: Module '"lucide-react"' has no exported member 'Fire'.
+./components/modern/Navbar.tsx:179:38
+Type error: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ light: LucideIcon; dark: LucideIcon; system: LucideIcon; }'.
 
-  2 |
-  3 | import { useState, useEffect } from 'react'
-> 4 | import { TrendingUp, Clock, Zap, Target, Users, Crown, Fire, Share2 } from 'lucide-react'
-    |                                                        ^
-  5 | import { useVibe } from '../hooks/useVibe'
-  6 |
-  7 | export default function ViralStats() {
+  177 |                 title={`Current: ${theme} (${resolvedTheme})`}
+  178 |               >
+> 179 |                 {React.createElement(themeIcons[theme], { className: "h-5 w-5" })}
+      |                                      ^
+  180 |               </button>
+  181 |             </div>
+  182 |
 Dockerfile:24
 -------------------
 22 |     # build phase
