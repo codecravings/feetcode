@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Code, Trophy, Users, Zap } from 'lucide-react'
 
 export default function Home() {
-  const [vibe, setVibe] = useState('professional')
+  const [vibe, setVibe] = useState<'professional' | 'humorous' | 'genz'>('professional')
 
   const vibeContent = {
     professional: {
