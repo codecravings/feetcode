@@ -1,19 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
   "routes": [
     {
       "src": "/api/server/(.*)",
-      "dest": "https://your-backend-url.herokuapp.com/api/$1"
+      "dest": "https://feet-code.up.railway.app/api/$1"
     }
   ],
   "env": {
-    "NEXT_PUBLIC_API_URL": "https://your-backend-url.herokuapp.com"
+    "NEXT_PUBLIC_API_URL": "https://feet-code.up.railway.app"
   },
   "functions": {
     "app/api/**/*.ts": {
