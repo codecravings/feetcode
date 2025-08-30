@@ -1,24 +1,28 @@
 stage-0
 RUN npm run build
-6s
+14s
 npm warn config production Use `--omit=dev` instead.
 > feetcode@0.1.0 build
 > next build
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
    ▲ Next.js 14.0.0
    Creating an optimized production build ...
  ✓ Compiled successfully
    Linting and checking validity of types ...
 Failed to compile.
-./components/modern/Navbar.tsx:179:38
-Type error: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ light: LucideIcon; dark: LucideIcon; system: LucideIcon; }'.
+./components/modern/Navbar.tsx:191:27
+Type error: Property 'username' does not exist on type 'never'.
 
-  177 |                 title={`Current: ${theme} (${resolvedTheme})`}
-  178 |               >
-> 179 |                 {React.createElement(themeIcons[theme], { className: "h-5 w-5" })}
-      |                                      ^
-  180 |               </button>
-  181 |             </div>
-  182 |
+  189 |                 >
+  190 |                   <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-500 rounded-full flex items-center justify-center text-primary-foreground text-sm font-semibold">
+> 191 |                     {user.username?.[0]?.toUpperCase() || '?'}
+      |                           ^
+  192 |                   </div>
+  193 |                   <span className="hidden lg:inline font-medium">{user.username}</span>
+  194 |                 </button>
 Dockerfile:24
 -------------------
 22 |     # build phase

@@ -24,7 +24,7 @@ import {
 export default function ModernNavbar() {
   const { theme, resolvedTheme, setTheme } = useTheme()
   const { vibe, setVibe } = useVibe()
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<{username?: string; email?: string} | null>(null)
   const [showUserMenu, setShowUserMenu] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [showAuthModal, setShowAuthModal] = useState(false)
