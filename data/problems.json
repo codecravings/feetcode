@@ -1,0 +1,2276 @@
+[
+  {
+    "id": "1",
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "category": "Array",
+    "tags": ["Array", "Hash Table"],
+    "acceptance_rate": 49.1,
+    "description": {
+      "professional": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+      "humorous": "Alright math wizards! 🧙‍♂️ We've got an array of numbers that are feeling pretty lonely, and they want to find their perfect mathematical match! Your mission: Find two numbers in this array that, when they hold hands and add themselves together, equal our target number. Rules: Each number can only be used once (no double-dipping!) and there's exactly one solution (no need to overthink it).",
+      "genz": "Bestie, we're about to play matchmaker for some numbers! 💅✨ You've got this array of numbers just vibing, and you need to find the TWO numbers that are literally perfect for each other - they add up to make your target number fr fr. The tea ☕: Each number can only be picked once (we don't do toxic relationships here) and there's exactly one solution (no cap)."
+    },
+    "examples": [
+      {
+        "input": "nums = [2,7,11,15], target = 9",
+        "output": "[0,1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3,2,4], target = 6",
+        "output": "[1,2]"
+      }
+    ],
+    "constraints": [
+      "2 ≤ nums.length ≤ 10⁴",
+      "-10⁹ ≤ nums[i] ≤ 10⁹",
+      "-10⁹ ≤ target ≤ 10⁹",
+      "Only one valid answer exists."
+    ],
+    "startingCode": {
+      "javascript": "function twoSum(nums, target) {\n    // Your code here\n    \n}",
+      "python": "def two_sum(nums, target):\n    # Your code here\n    pass",
+      "java": "public int[] twoSum(int[] nums, int target) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[2,7,11,15], 9",
+        "expected": "[0,1]"
+      },
+      {
+        "input": "[3,2,4], 6",
+        "expected": "[1,2]"
+      },
+      {
+        "input": "[3,3], 6",
+        "expected": "[0,1]"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Valid Parentheses",
+    "difficulty": "Easy",
+    "category": "Stack",
+    "tags": ["String", "Stack"],
+    "acceptance_rate": 40.2,
+    "description": {
+      "professional": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type.",
+      "humorous": "Time for some bracket therapy! 🧠 You've got a string full of brackets that might have some serious closure issues. Your job is to figure out if these brackets have healthy relationships - meaning every opening bracket finds its matching closing bracket, and they're all properly nested (no toxic overlapping relationships allowed!).",
+      "genz": "Okay bestie, these brackets are having relationship drama and need your help! 💔 You need to check if every opening bracket has found its perfect match and they're not crossing boundaries. It's giving 'healthy communication' energy - everything needs to be opened and closed properly, no cap! ✨"
+    },
+    "examples": [
+      {
+        "input": "s = \"()\"",
+        "output": "true"
+      },
+      {
+        "input": "s = \"()[]{}\"",
+        "output": "true"
+      },
+      {
+        "input": "s = \"(]\"",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "1 ≤ s.length ≤ 10⁴",
+      "s consists of parentheses only '()[]{}'."
+    ],
+    "startingCode": {
+      "javascript": "function isValid(s) {\n    // Your code here\n    \n}",
+      "python": "def is_valid(s):\n    # Your code here\n    pass",
+      "java": "public boolean isValid(String s) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "\"()\"",
+        "expected": "true"
+      },
+      {
+        "input": "\"()[]{}\"",
+        "expected": "true"
+      },
+      {
+        "input": "\"(]\"",
+        "expected": "false"
+      },
+      {
+        "input": "\"([)]\"",
+        "expected": "false"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Longest Substring Without Repeating Characters",
+    "difficulty": "Medium",
+    "category": "String",
+    "tags": ["Hash Table", "String", "Sliding Window"],
+    "acceptance_rate": 33.8,
+    "description": {
+      "professional": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string.",
+      "humorous": "Find the longest string that doesn't repeat itself (unlike your ex who keeps coming back)! 😅 You need to scan through the string and find the longest stretch where every character appears exactly once. Think of it as finding the longest streak of unique characters before someone starts repeating themselves.",
+      "genz": "Find the longest substring that doesn't repeat - we stan unique characters! ✨ No basic repetitive behavior allowed bestie. You're looking for that perfect stretch where everyone brings their own vibe and nobody's copying each other's homework fr fr 💅"
+    },
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      }
+    ],
+    "constraints": [
+      "0 ≤ s.length ≤ 5 * 10⁴",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "startingCode": {
+      "javascript": "function lengthOfLongestSubstring(s) {\n    // Your code here\n    \n}",
+      "python": "def length_of_longest_substring(s):\n    # Your code here\n    pass",
+      "java": "public int lengthOfLongestSubstring(String s) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "\"abcabcbb\"",
+        "expected": "3"
+      },
+      {
+        "input": "\"bbbbb\"",
+        "expected": "1"
+      },
+      {
+        "input": "\"pwwkew\"",
+        "expected": "3"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Add Two Numbers",
+    "difficulty": "Medium",
+    "category": "Linked List",
+    "tags": ["Linked List", "Math", "Recursion"],
+    "acceptance_rate": 37.4,
+    "description": {
+      "professional": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.",
+      "humorous": "Make two linked lists do math like they're in elementary school! 🧮 These linked lists are storing numbers backwards (because why make life easy?), and you need to add them together. Think of it like adding numbers digit by digit, but with a twist - everything's reversed and in a chain!",
+      "genz": "These linked lists about to show their math skills no cap! 📚 They're storing numbers in reverse order (giving chaotic energy) and you need to help them add up. It's like doing math but make it ✨spicy✨ because everything's backwards and connected."
+    },
+    "examples": [
+      {
+        "input": "l1 = [2,4,3], l2 = [5,6,4]",
+        "output": "[7,0,8]",
+        "explanation": "342 + 465 = 807."
+      }
+    ],
+    "constraints": [
+      "The number of nodes in each linked list is in the range [1, 100].",
+      "0 ≤ Node.val ≤ 9",
+      "It is guaranteed that the list represents a number that does not have leading zeros."
+    ],
+    "startingCode": {
+      "javascript": "function addTwoNumbers(l1, l2) {\n    // Your code here\n    \n}",
+      "python": "def add_two_numbers(l1, l2):\n    # Your code here\n    pass",
+      "java": "public ListNode addTwoNumbers(ListNode l1, ListNode l2) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[2,4,3], [5,6,4]",
+        "expected": "[7,0,8]"
+      },
+      {
+        "input": "[0], [0]",
+        "expected": "[0]"
+      },
+      {
+        "input": "[9,9,9,9,9,9,9], [9,9,9,9]",
+        "expected": "[8,9,9,9,0,0,0,1]"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Merge Two Sorted Lists",
+    "difficulty": "Easy",
+    "category": "Linked List",
+    "tags": ["Linked List", "Recursion"],
+    "acceptance_rate": 62.1,
+    "description": {
+      "professional": "You are given the heads of two sorted linked lists list1 and list2. Merge the two lists in a way that keeps them sorted and return the head of the merged linked list. The list should be made by splicing together the nodes of the first two lists.",
+      "humorous": "Play matchmaker for two very organized lists! 💕 These linked lists are already sorted (they're that type A personality), and you need to merge them while keeping everyone in the right order. Think of it like merging two orderly queues at the grocery store.",
+      "genz": "Help these sorted lists find their perfect merge moment! ✨ They're both giving 'I have my life together' vibes and you need to combine them without ruining their organized aesthetic. It's giving main character collaboration energy bestie! 💅"
+    },
+    "examples": [
+      {
+        "input": "list1 = [1,2,4], list2 = [1,3,4]",
+        "output": "[1,1,2,3,4,4]"
+      },
+      {
+        "input": "list1 = [], list2 = []",
+        "output": "[]"
+      }
+    ],
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 ≤ Node.val ≤ 100",
+      "Both list1 and list2 are sorted in non-decreasing order."
+    ],
+    "startingCode": {
+      "javascript": "function mergeTwoLists(list1, list2) {\n    // Your code here\n    \n}",
+      "python": "def merge_two_lists(list1, list2):\n    # Your code here\n    pass",
+      "java": "public ListNode mergeTwoLists(ListNode list1, ListNode list2) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,2,4], [1,3,4]",
+        "expected": "[1,1,2,3,4,4]"
+      },
+      {
+        "input": "[], []",
+        "expected": "[]"
+      },
+      {
+        "input": "[], [0]",
+        "expected": "[0]"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Maximum Subarray",
+    "difficulty": "Medium",
+    "category": "Array",
+    "tags": ["Array", "Divide and Conquer", "Dynamic Programming"],
+    "acceptance_rate": 49.9,
+    "description": {
+      "professional": "Given an integer array nums, find the subarray with the largest sum, and return its sum. A subarray is a contiguous non-empty sequence of elements within an array.",
+      "humorous": "Find the most positive stretch in this emotional rollercoaster of an array! 🎢 You've got an array with ups and downs (positive and negative numbers), and you need to find the consecutive chunk that gives you the biggest sum. It's like finding the best part of a really long movie!",
+      "genz": "This array is giving mixed energy and you need to find the most iconic consecutive stretch! ✨ Some numbers are serving positive vibes, others are bringing the mood down, but somewhere in there is the perfect sequence that hits different. Find that main character moment bestie! 💅"
+    },
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "1 ≤ nums.length ≤ 10⁵",
+      "-10⁴ ≤ nums[i] ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function maxSubArray(nums) {\n    // Your code here\n    \n}",
+      "python": "def max_sub_array(nums):\n    # Your code here\n    pass",
+      "java": "public int maxSubArray(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[-2,1,-3,4,-1,2,1,-5,4]",
+        "expected": "6"
+      },
+      {
+        "input": "[1]",
+        "expected": "1"
+      },
+      {
+        "input": "[5,4,-1,7,8]",
+        "expected": "23"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Best Time to Buy and Sell Stock",
+    "difficulty": "Easy",
+    "category": "Array",
+    "tags": ["Array", "Dynamic Programming"],
+    "acceptance_rate": 54.2,
+    "description": {
+      "professional": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell it. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+      "humorous": "Time to play the stock market with perfect hindsight! 📈 You've got the prices for each day, and you need to figure out the best day to buy low and sell high. It's like having a crystal ball but only using it for one stock transaction. Don't be greedy - you can only buy once and sell once!",
+      "genz": "Bestie, we're about to secure the bag with some stock market moves! 💰 You get to see all the prices ahead of time (giving insider trading vibes but legal), and you need to find the perfect buy low, sell high moment. One transaction only - make it count! It's giving strategic investment energy ✨"
+    },
+    "examples": [
+      {
+        "input": "prices = [7,1,5,3,6,4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5."
+      },
+      {
+        "input": "prices = [7,6,4,3,1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "constraints": [
+      "1 ≤ prices.length ≤ 10⁵",
+      "0 ≤ prices[i] ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function maxProfit(prices) {\n    // Your code here\n    \n}",
+      "python": "def max_profit(prices):\n    # Your code here\n    pass",
+      "java": "public int maxProfit(int[] prices) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[7,1,5,3,6,4]",
+        "expected": "5"
+      },
+      {
+        "input": "[7,6,4,3,1]",
+        "expected": "0"
+      },
+      {
+        "input": "[1,2,3,4,5]",
+        "expected": "4"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Climbing Stairs",
+    "difficulty": "Easy",
+    "category": "Dynamic Programming",
+    "tags": ["Math", "Dynamic Programming", "Memoization"],
+    "acceptance_rate": 51.1,
+    "description": {
+      "professional": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+      "humorous": "Time for some fitness! 🏃‍♂️ You're at the bottom of a staircase and need to get to the top, but you're not just walking - you can take either 1 step at a time (safe and steady) or 2 steps at a time (feeling athletic). How many different ways can you mix and match your steps to reach the top? It's like a dance routine with math!",
+      "genz": "Bestie, you're about to climb these stairs with STYLE! ✨ You can take single steps (giving careful energy) or double steps (serving athletic main character vibes). How many different combinations can you serve to reach the top? It's giving choreography meets math class energy! 💃"
+    },
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: 1. 1 step + 1 step, 2. 2 steps"
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: 1. 1 step + 1 step + 1 step, 2. 1 step + 2 steps, 3. 2 steps + 1 step"
+      }
+    ],
+    "constraints": [
+      "1 ≤ n ≤ 45"
+    ],
+    "startingCode": {
+      "javascript": "function climbStairs(n) {\n    // Your code here\n    \n}",
+      "python": "def climb_stairs(n):\n    # Your code here\n    pass",
+      "java": "public int climbStairs(int n) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "2",
+        "expected": "2"
+      },
+      {
+        "input": "3",
+        "expected": "3"
+      },
+      {
+        "input": "4",
+        "expected": "5"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Binary Tree Inorder Traversal",
+    "difficulty": "Easy",
+    "category": "Tree",
+    "tags": ["Stack", "Tree", "Depth-First Search", "Binary Tree"],
+    "acceptance_rate": 74.4,
+    "description": {
+      "professional": "Given the root of a binary tree, return the inorder traversal of its nodes' values. In inorder traversal, we visit the left subtree, then the root node, then the right subtree.",
+      "humorous": "Time for a tree tour! 🌳 You've got a binary tree and need to visit every node in a very specific order - left child, parent, right child. It's like a systematic family reunion where you greet the left side of the family first, then the main person, then the right side. Very organized!",
+      "genz": "We're about to take a structured tour of this tree bestie! 🌲 The vibe is: visit left child first (giving respectful energy), then the parent (main character moment), then the right child. It's like a well-planned family gathering where everyone gets their moment to shine in order ✨"
+    },
+    "examples": [
+      {
+        "input": "root = [1,null,2,3]",
+        "output": "[1,3,2]"
+      },
+      {
+        "input": "root = []",
+        "output": "[]"
+      }
+    ],
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "-100 ≤ Node.val ≤ 100"
+    ],
+    "startingCode": {
+      "javascript": "function inorderTraversal(root) {\n    // Your code here\n    \n}",
+      "python": "def inorder_traversal(root):\n    # Your code here\n    pass",
+      "java": "public List<Integer> inorderTraversal(TreeNode root) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,null,2,3]",
+        "expected": "[1,3,2]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[1]",
+        "expected": "[1]"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Reverse Linked List",
+    "difficulty": "Easy",
+    "category": "Linked List",
+    "tags": ["Linked List", "Recursion"],
+    "acceptance_rate": 73.6,
+    "description": {
+      "professional": "Given the head of a singly linked list, reverse the list, and return the reversed list. You should reverse the list by changing the direction of the pointers.",
+      "humorous": "Time to make this linked list do the moonwalk! 🕺 You've got a chain of nodes all pointing forward, and you need to make them all turn around and point backwards. It's like convincing a conga line to reverse direction without breaking the chain!",
+      "genz": "This linked list is about to serve reverse energy! ✨ All these nodes are currently pointing forward (giving 'following the crowd' vibes) and you need to make them turn around and point the other way. It's giving 'plot twist' energy - make that chain go backwards bestie! 💅"
+    },
+    "examples": [
+      {
+        "input": "head = [1,2,3,4,5]",
+        "output": "[5,4,3,2,1]"
+      },
+      {
+        "input": "head = [1,2]",
+        "output": "[2,1]"
+      },
+      {
+        "input": "head = []",
+        "output": "[]"
+      }
+    ],
+    "constraints": [
+      "The number of nodes in the list is the range [0, 5000].",
+      "-5000 ≤ Node.val ≤ 5000"
+    ],
+    "startingCode": {
+      "javascript": "function reverseList(head) {\n    // Your code here\n    \n}",
+      "python": "def reverse_list(head):\n    # Your code here\n    pass",
+      "java": "public ListNode reverseList(ListNode head) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,2,3,4,5]",
+        "expected": "[5,4,3,2,1]"
+      },
+      {
+        "input": "[1,2]",
+        "expected": "[2,1]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Contains Duplicate",
+    "difficulty": "Easy",
+    "category": "Array",
+    "tags": ["Array", "Hash Table", "Sorting"],
+    "acceptance_rate": 60.3,
+    "description": {
+      "professional": "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+      "humorous": "Detective time! 🕵️‍♂️ You need to check if this array has any copycats - numbers that show up more than once. It's like checking if anyone crashed the party uninvited (twice)!",
+      "genz": "Bestie, we need to call out any numbers that are being repetitive! 📢 Check if any number is pulling a 'main character' move by appearing multiple times. We don't do duplicates in this house! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "true"
+      },
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "1 ≤ nums.length ≤ 10⁵",
+      "-10⁹ ≤ nums[i] ≤ 10⁹"
+    ],
+    "startingCode": {
+      "javascript": "function containsDuplicate(nums) {\n    // Your code here\n    \n}",
+      "python": "def contains_duplicate(nums):\n    # Your code here\n    pass",
+      "java": "public boolean containsDuplicate(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,2,3,1]",
+        "expected": "true"
+      },
+      {
+        "input": "[1,2,3,4]",
+        "expected": "false"
+      },
+      {
+        "input": "[1,1,1,3,3,4,3,2,4,2]",
+        "expected": "true"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Maximum Depth of Binary Tree",
+    "difficulty": "Easy",
+    "category": "Tree",
+    "tags": ["Tree", "Depth-First Search", "Breadth-First Search", "Binary Tree"],
+    "acceptance_rate": 73.9,
+    "description": {
+      "professional": "Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+      "humorous": "How deep does this tree rabbit hole go? 🌳🕳️ You need to find the longest path from the top of the tree to the bottom. It's like measuring how tall your family tree is, but with actual numbers!",
+      "genz": "We're about to measure this tree's depth bestie! 📏 Find the longest path from root to leaf - it's giving 'how deep is your love' but make it data structures ✨"
+    },
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "3"
+      },
+      {
+        "input": "root = [1,null,2]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10⁴].",
+      "-100 ≤ Node.val ≤ 100"
+    ],
+    "startingCode": {
+      "javascript": "function maxDepth(root) {\n    // Your code here\n    \n}",
+      "python": "def max_depth(root):\n    # Your code here\n    pass",
+      "java": "public int maxDepth(TreeNode root) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[3,9,20,null,null,15,7]",
+        "expected": "3"
+      },
+      {
+        "input": "[1,null,2]",
+        "expected": "2"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Same Tree",
+    "difficulty": "Easy",
+    "category": "Tree",
+    "tags": ["Tree", "Depth-First Search", "Binary Tree"],
+    "acceptance_rate": 57.8,
+    "description": {
+      "professional": "Given the roots of two binary trees p and q, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.",
+      "humorous": "Twin detector mode activated! 👯‍♀️ You've got two trees and need to check if they're identical twins or just look similar. Every node needs to match perfectly - same structure, same values, same everything!",
+      "genz": "Are these trees twins or nah? 🌳👯‍♀️ You need to check if they're serving the exact same energy - same structure, same values, everything matching perfectly. No half-similarities allowed bestie! ✨"
+    },
+    "examples": [
+      {
+        "input": "p = [1,2,3], q = [1,2,3]",
+        "output": "true"
+      },
+      {
+        "input": "p = [1,2], q = [1,null,2]",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "The number of nodes in both trees is in the range [0, 100].",
+      "-10⁴ ≤ Node.val ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function isSameTree(p, q) {\n    // Your code here\n    \n}",
+      "python": "def is_same_tree(p, q):\n    # Your code here\n    pass",
+      "java": "public boolean isSameTree(TreeNode p, TreeNode q) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,2,3], [1,2,3]",
+        "expected": "true"
+      },
+      {
+        "input": "[1,2], [1,null,2]",
+        "expected": "false"
+      },
+      {
+        "input": "[1,2,1], [1,1,2]",
+        "expected": "false"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Missing Number",
+    "difficulty": "Easy",
+    "category": "Array",
+    "tags": ["Array", "Hash Table", "Math", "Bit Manipulation", "Sorting"],
+    "acceptance_rate": 59.8,
+    "description": {
+      "professional": "Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.",
+      "humorous": "Someone's gone missing! 🔍 You've got an array that should have numbers from 0 to n, but one number decided to play hide and seek. Your job is to find the missing number - like a mathematical game of Where's Waldo!",
+      "genz": "One number said 'I'm outta here' and left the chat! 👻 You need to figure out which number ghosted this array. It should be a perfect sequence from 0 to n but someone's playing hard to get bestie! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [3,0,1]",
+        "output": "2"
+      },
+      {
+        "input": "nums = [0,1]",
+        "output": "2"
+      },
+      {
+        "input": "nums = [9,6,4,2,3,5,7,0,1]",
+        "output": "8"
+      }
+    ],
+    "constraints": [
+      "n == nums.length",
+      "1 ≤ n ≤ 10⁴",
+      "0 ≤ nums[i] ≤ n",
+      "All the numbers of nums are unique."
+    ],
+    "startingCode": {
+      "javascript": "function missingNumber(nums) {\n    // Your code here\n    \n}",
+      "python": "def missing_number(nums):\n    # Your code here\n    pass",
+      "java": "public int missingNumber(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[3,0,1]",
+        "expected": "2"
+      },
+      {
+        "input": "[0,1]",
+        "expected": "2"
+      },
+      {
+        "input": "[9,6,4,2,3,5,7,0,1]",
+        "expected": "8"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Move Zeroes",
+    "difficulty": "Easy",
+    "category": "Array",
+    "tags": ["Array", "Two Pointers"],
+    "acceptance_rate": 61.1,
+    "description": {
+      "professional": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements. Note that you must do this in-place without making a copy of the array.",
+      "humorous": "Time to play musical chairs with zeros! 🎵 All the zeros need to move to the back of the line, but everyone else keeps their spots. It's like organizing a group photo where all the shy people (zeros) go to the back!",
+      "genz": "These zeros need to go to the back of the line bestie! 🚶‍♀️ Move all the zeros to the end while keeping everyone else in their original order. It's giving 'organized chaos' energy - rearrange but make it structured! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [0,1,0,3,12]",
+        "output": "[1,3,12,0,0]"
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[0]"
+      }
+    ],
+    "constraints": [
+      "1 ≤ nums.length ≤ 10⁴",
+      "-2³¹ ≤ nums[i] ≤ 2³¹ - 1"
+    ],
+    "startingCode": {
+      "javascript": "function moveZeroes(nums) {\n    // Your code here\n    \n}",
+      "python": "def move_zeroes(nums):\n    # Your code here\n    pass",
+      "java": "public void moveZeroes(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[0,1,0,3,12]",
+        "expected": "[1,3,12,0,0]"
+      },
+      {
+        "input": "[0]",
+        "expected": "[0]"
+      },
+      {
+        "input": "[1,0,1]",
+        "expected": "[1,1,0]"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Single Number",
+    "difficulty": "Easy",
+    "category": "Array",
+    "tags": ["Array", "Bit Manipulation"],
+    "acceptance_rate": 70.1,
+    "description": {
+      "professional": "Given a non-empty array of integers nums, every element appears twice except for one. Find that single one. You must implement a solution with a linear runtime complexity and use only constant extra space.",
+      "humorous": "Find the loner! 😔 Everyone in this array has a buddy (appears twice), except for one sad number that's flying solo. Your mission: find that one unique snowflake without using extra space!",
+      "genz": "Someone's giving main character energy by being different! ✨ Everyone else has their twin, but one number said 'I'm unique' and shows up only once. Find that iconic individual bestie! 💅"
+    },
+    "examples": [
+      {
+        "input": "nums = [2,2,1]",
+        "output": "1"
+      },
+      {
+        "input": "nums = [4,1,2,1,2]",
+        "output": "4"
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "1 ≤ nums.length ≤ 3 * 10⁴",
+      "-3 * 10⁴ ≤ nums[i] ≤ 3 * 10⁴",
+      "Each element in the array appears twice except for one element which appears only once."
+    ],
+    "startingCode": {
+      "javascript": "function singleNumber(nums) {\n    // Your code here\n    \n}",
+      "python": "def single_number(nums):\n    # Your code here\n    pass",
+      "java": "public int singleNumber(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[2,2,1]",
+        "expected": "1"
+      },
+      {
+        "input": "[4,1,2,1,2]",
+        "expected": "4"
+      },
+      {
+        "input": "[1]",
+        "expected": "1"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "title": "Palindrome Number",
+    "difficulty": "Easy",
+    "category": "Math",
+    "tags": ["Math"],
+    "acceptance_rate": 53.2,
+    "description": {
+      "professional": "Given an integer x, return true if x is a palindrome, and false otherwise. An integer is a palindrome when it reads the same backward as forward.",
+      "humorous": "Is this number the same forwards and backwards? 🔄 Like 'racecar' but with numbers! Check if this number has that perfect symmetry where it looks exactly the same if you flip it around.",
+      "genz": "Does this number serve the same energy forwards and backwards? ✨ We're looking for that perfect symmetrical vibe - like when your outfit looks fire from every angle bestie! 💅"
+    },
+    "examples": [
+      {
+        "input": "x = 121",
+        "output": "true",
+        "explanation": "121 reads as 121 from left to right and from right to left."
+      },
+      {
+        "input": "x = -121",
+        "output": "false",
+        "explanation": "From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome."
+      },
+      {
+        "input": "x = 10",
+        "output": "false",
+        "explanation": "Reads 01 from right to left. Therefore it is not a palindrome."
+      }
+    ],
+    "constraints": [
+      "-2³¹ ≤ x ≤ 2³¹ - 1"
+    ],
+    "startingCode": {
+      "javascript": "function isPalindrome(x) {\n    // Your code here\n    \n}",
+      "python": "def is_palindrome(x):\n    # Your code here\n    pass",
+      "java": "public boolean isPalindrome(int x) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "121",
+        "expected": "true"
+      },
+      {
+        "input": "-121",
+        "expected": "false"
+      },
+      {
+        "input": "10",
+        "expected": "false"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "title": "Roman to Integer",
+    "difficulty": "Easy",
+    "category": "String",
+    "tags": ["Hash Table", "Math", "String"],
+    "acceptance_rate": 58.7,
+    "description": {
+      "professional": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. Given a roman numeral, convert it to an integer.",
+      "humorous": "Time travel to ancient Rome! 🏛️ The Romans had their own way of doing math, and now you need to translate their fancy symbols into regular numbers. It's like decoding an ancient text message!",
+      "genz": "The Romans really said 'let's make math complicated' and we're here for it! ✨ Decode these ancient symbols into modern numbers bestie. It's giving historical translation energy! 📜"
+    },
+    "examples": [
+      {
+        "input": "s = \"III\"",
+        "output": "3",
+        "explanation": "III = 3."
+      },
+      {
+        "input": "s = \"LVIII\"",
+        "output": "58",
+        "explanation": "L = 50, V= 5, III = 3."
+      },
+      {
+        "input": "s = \"MCMXC\"",
+        "output": "1994",
+        "explanation": "M = 1000, CM = 900, XC = 90."
+      }
+    ],
+    "constraints": [
+      "1 ≤ s.length ≤ 15",
+      "s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').",
+      "It is guaranteed that s is a valid roman numeral in the range [1, 3999]."
+    ],
+    "startingCode": {
+      "javascript": "function romanToInt(s) {\n    // Your code here\n    \n}",
+      "python": "def roman_to_int(s):\n    # Your code here\n    pass",
+      "java": "public int romanToInt(String s) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "\"III\"",
+        "expected": "3"
+      },
+      {
+        "input": "\"LVIII\"",
+        "expected": "58"
+      },
+      {
+        "input": "\"MCMXC\"",
+        "expected": "1994"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Longest Common Prefix",
+    "difficulty": "Easy",
+    "category": "String",
+    "tags": ["String", "Trie"],
+    "acceptance_rate": 40.1,
+    "description": {
+      "professional": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\".",
+      "humorous": "Find what these strings have in common at the beginning! 🤝 It's like finding the common ground in a group conversation - what do all these strings start with? If they can't agree on anything, return nothing!",
+      "genz": "What vibe are all these strings sharing from the start? ✨ Find their common beginning bestie - like when your friend group all starts saying the same phrase! If they don't match, just return empty vibes 💅"
+    },
+    "examples": [
+      {
+        "input": "strs = [\"flower\",\"flow\",\"flight\"]",
+        "output": "\"fl\""
+      },
+      {
+        "input": "strs = [\"dog\",\"racecar\",\"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the input strings."
+      }
+    ],
+    "constraints": [
+      "1 ≤ strs.length ≤ 200",
+      "0 ≤ strs[i].length ≤ 200",
+      "strs[i] consists of only lowercase English letters."
+    ],
+    "startingCode": {
+      "javascript": "function longestCommonPrefix(strs) {\n    // Your code here\n    \n}",
+      "python": "def longest_common_prefix(strs):\n    # Your code here\n    pass",
+      "java": "public String longestCommonPrefix(String[] strs) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[\"flower\",\"flow\",\"flight\"]",
+        "expected": "\"fl\""
+      },
+      {
+        "input": "[\"dog\",\"racecar\",\"car\"]",
+        "expected": "\"\""
+      },
+      {
+        "input": "[\"ab\", \"a\"]",
+        "expected": "\"a\""
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "title": "Valid Anagram",
+    "difficulty": "Easy",
+    "category": "String",
+    "tags": ["Hash Table", "String", "Sorting"],
+    "acceptance_rate": 63.2,
+    "description": {
+      "professional": "Given two strings s and t, return true if t is an anagram of s, and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+      "humorous": "Word scramble detective! 🔍 Check if these two words are made from the exact same letters, just mixed up. It's like checking if someone just shook up a Scrabble tile bag and made two different words!",
+      "genz": "Are these words serving the same letter energy but in different order? ✨ Check if they're using the exact same letters bestie - like when you rearrange your room but it's still the same furniture! 💅"
+    },
+    "examples": [
+      {
+        "input": "s = \"anagram\", t = \"nagaram\"",
+        "output": "true"
+      },
+      {
+        "input": "s = \"rat\", t = \"car\"",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "1 ≤ s.length, t.length ≤ 5 * 10⁴",
+      "s and t consist of lowercase English letters."
+    ],
+    "startingCode": {
+      "javascript": "function isAnagram(s, t) {\n    // Your code here\n    \n}",
+      "python": "def is_anagram(s, t):\n    # Your code here\n    pass",
+      "java": "public boolean isAnagram(String s, String t) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "\"anagram\", \"nagaram\"",
+        "expected": "true"
+      },
+      {
+        "input": "\"rat\", \"car\"",
+        "expected": "false"
+      },
+      {
+        "input": "\"listen\", \"silent\"",
+        "expected": "true"
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "title": "First Bad Version",
+    "difficulty": "Easy",
+    "category": "Binary Search",
+    "tags": ["Binary Search", "Interactive"],
+    "acceptance_rate": 41.5,
+    "description": {
+      "professional": "You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad. Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.",
+      "humorous": "Quality control detective time! 🕵️‍♀️ Someone released a bad version and it infected all the versions after it like a virus. You need to find that first troublemaker using the least number of checks possible!",
+      "genz": "Someone really said 'let's break everything' and released a bad version! 💥 Now everything after that is broken too. Find that first messy version bestie - we need to identify the source of this chaos! ✨"
+    },
+    "examples": [
+      {
+        "input": "n = 5, bad = 4",
+        "output": "4",
+        "explanation": "call isBadVersion(3) -> false, call isBadVersion(5) -> true, call isBadVersion(4) -> true, Then 4 is the first bad version."
+      }
+    ],
+    "constraints": [
+      "1 ≤ bad ≤ n ≤ 2³± - 1"
+    ],
+    "startingCode": {
+      "javascript": "function firstBadVersion(n) {\n    return function(isBadVersion) {\n        // Your code here\n        \n    };\n}",
+      "python": "def first_bad_version(n):\n    # Your code here\n    pass",
+      "java": "public int firstBadVersion(int n) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "5, 4",
+        "expected": "4"
+      },
+      {
+        "input": "1, 1",
+        "expected": "1"
+      },
+      {
+        "input": "3, 1",
+        "expected": "1"
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "title": "Ransom Note",
+    "difficulty": "Easy",
+    "category": "String",
+    "tags": ["Hash Table", "String", "Counting"],
+    "acceptance_rate": 58.9,
+    "description": {
+      "professional": "Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise. Each letter in magazine can only be used once in ransomNote.",
+      "humorous": "Time to play detective with cut-out magazine letters! ✏️📰 Can you make your ransom note using only the letters available in the magazine? Each letter can only be used once - no photocopying allowed!",
+      "genz": "We're about to channel our inner mystery movie villain bestie! 🔪 Can you craft this ransom note using only the letters from the magazine? Each letter gets used once - we're not doing reprints in this house! ✨"
+    },
+    "examples": [
+      {
+        "input": "ransomNote = \"a\", magazine = \"b\"",
+        "output": "false"
+      },
+      {
+        "input": "ransomNote = \"aa\", magazine = \"ab\"",
+        "output": "false"
+      },
+      {
+        "input": "ransomNote = \"aa\", magazine = \"aab\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 ≤ ransomNote.length, magazine.length ≤ 10⁵",
+      "ransomNote and magazine consist of lowercase English letters."
+    ],
+    "startingCode": {
+      "javascript": "function canConstruct(ransomNote, magazine) {\n    // Your code here\n    \n}",
+      "python": "def can_construct(ransom_note, magazine):\n    # Your code here\n    pass",
+      "java": "public boolean canConstruct(String ransomNote, String magazine) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "\"a\", \"b\"",
+        "expected": "false"
+      },
+      {
+        "input": "\"aa\", \"ab\"",
+        "expected": "false"
+      },
+      {
+        "input": "\"aa\", \"aab\"",
+        "expected": "true"
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "title": "Fizz Buzz",
+    "difficulty": "Easy",
+    "category": "Math",
+    "tags": ["Math", "String", "Simulation"],
+    "acceptance_rate": 68.1,
+    "description": {
+      "professional": "Given an integer n, return a string array answer (1-indexed) where: answer[i] == \"FizzBuzz\" if i is divisible by 3 and 5, answer[i] == \"Fizz\" if i is divisible by 3, answer[i] == \"Buzz\" if i is divisible by 5, answer[i] == i (as a string) if none of the above conditions are true.",
+      "humorous": "The classic childhood game meets programming! 🎮 Count from 1 to n, but with a twist - replace multiples of 3 with 'Fizz', multiples of 5 with 'Buzz', and multiples of both with 'FizzBuzz'. It's nostalgia with a coding flavor!",
+      "genz": "This is giving elementary school playground vibes but make it code! ✨ Count to n but switch it up - 3s get 'Fizz', 5s get 'Buzz', and both get 'FizzBuzz'. It's serving childhood memories with programming energy bestie! 💅"
+    },
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"1\",\"2\",\"Fizz\"]"
+      },
+      {
+        "input": "n = 5",
+        "output": "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]"
+      },
+      {
+        "input": "n = 15",
+        "output": "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\",\"8\",\"Fizz\",\"Buzz\",\"11\",\"Fizz\",\"13\",\"14\",\"FizzBuzz\"]"
+      }
+    ],
+    "constraints": [
+      "1 ≤ n ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function fizzBuzz(n) {\n    // Your code here\n    \n}",
+      "python": "def fizz_buzz(n):\n    # Your code here\n    pass",
+      "java": "public List<String> fizzBuzz(int n) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "3",
+        "expected": "[\"1\",\"2\",\"Fizz\"]"
+      },
+      {
+        "input": "5",
+        "expected": "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]"
+      },
+      {
+        "input": "15",
+        "expected": "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\",\"Fizz\",\"7\",\"8\",\"Fizz\",\"Buzz\",\"11\",\"Fizz\",\"13\",\"14\",\"FizzBuzz\"]"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "title": "Majority Element",
+    "difficulty": "Easy",
+    "category": "Array",
+    "tags": ["Array", "Hash Table", "Divide and Conquer", "Sorting", "Counting"],
+    "acceptance_rate": 63.7,
+    "description": {
+      "professional": "Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n/2⌋ times. You may assume that the majority element always exists in the array.",
+      "humorous": "Find the popular kid! 📈 Someone in this array is showing up more than everyone else - more than half the time! Your job is to find that overachiever who can't stop appearing.",
+      "genz": "Who's the main character of this array? ✨ Someone's serving main character energy by appearing more than half the time! Find that number that's really feeling themselves bestie 💅"
+    },
+    "examples": [
+      {
+        "input": "nums = [3,2,3]",
+        "output": "3"
+      },
+      {
+        "input": "nums = [2,2,1,1,1,2,2]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "n == nums.length",
+      "1 ≤ n ≤ 5 * 10⁴",
+      "-10⁹ ≤ nums[i] ≤ 10⁹"
+    ],
+    "startingCode": {
+      "javascript": "function majorityElement(nums) {\n    // Your code here\n    \n}",
+      "python": "def majority_element(nums):\n    # Your code here\n    pass",
+      "java": "public int majorityElement(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[3,2,3]",
+        "expected": "3"
+      },
+      {
+        "input": "[2,2,1,1,1,2,2]",
+        "expected": "2"
+      },
+      {
+        "input": "[1]",
+        "expected": "1"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "title": "Add Binary",
+    "difficulty": "Easy",
+    "category": "String",
+    "tags": ["Math", "String", "Bit Manipulation", "Simulation"],
+    "acceptance_rate": 51.3,
+    "description": {
+      "professional": "Given two binary strings a and b, return their sum as a binary string.",
+      "humorous": "Binary math time! 💻 These computers speak in 0s and 1s, and you need to add two binary numbers together. It's like regular math but in robot language!",
+      "genz": "We're about to do math but make it binary bestie! 🤖 Add these two strings of 0s and 1s together - it's giving 'speak computer' energy! ✨"
+    },
+    "examples": [
+      {
+        "input": "a = \"11\", b = \"1\"",
+        "output": "\"100\""
+      },
+      {
+        "input": "a = \"1010\", b = \"1011\"",
+        "output": "\"10101\""
+      }
+    ],
+    "constraints": [
+      "1 ≤ a.length, b.length ≤ 10⁴",
+      "a and b consist only of '0' or '1' characters.",
+      "Each string does not contain leading zeros except for the zero itself."
+    ],
+    "startingCode": {
+      "javascript": "function addBinary(a, b) {\n    // Your code here\n    \n}",
+      "python": "def add_binary(a, b):\n    # Your code here\n    pass",
+      "java": "public String addBinary(String a, String b) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "\"11\", \"1\"",
+        "expected": "\"100\""
+      },
+      {
+        "input": "\"1010\", \"1011\"",
+        "expected": "\"10101\""
+      },
+      {
+        "input": "\"0\", \"0\"",
+        "expected": "\"0\""
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Implement Queue using Stacks",
+    "difficulty": "Easy",
+    "category": "Stack",
+    "tags": ["Stack", "Design", "Queue"],
+    "acceptance_rate": 63.4,
+    "description": {
+      "professional": "Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).",
+      "humorous": "Stack gymnastics! 🤸‍♀️ You need to make a queue (first-in-first-out) using only stacks (last-in-first-out). It's like trying to eat a sandwich from the bottom up - you need to get creative!",
+      "genz": "We're about to flip the script on data structures! ✨ Make a queue using only stacks - it's giving 'work with what you have' energy. Turn that LIFO into FIFO bestie! 💅"
+    },
+    "examples": [
+      {
+        "input": "[\"MyQueue\", \"push\", \"push\", \"peek\", \"pop\", \"empty\"]\n[[], [1], [2], [], [], []]",
+        "output": "[null, null, null, 1, 1, false]"
+      }
+    ],
+    "constraints": [
+      "1 ≤ x ≤ 9",
+      "At most 100 calls will be made to push, pop, peek, and empty.",
+      "All the calls to pop and peek are valid."
+    ],
+    "startingCode": {
+      "javascript": "var MyQueue = function() {\n    // Your code here\n};\n\nMyQueue.prototype.push = function(x) {\n    // Your code here\n};\n\nMyQueue.prototype.pop = function() {\n    // Your code here\n};\n\nMyQueue.prototype.peek = function() {\n    // Your code here\n};\n\nMyQueue.prototype.empty = function() {\n    // Your code here\n};",
+      "python": "class MyQueue:\n\n    def __init__(self):\n        # Your code here\n        pass\n\n    def push(self, x: int) -> None:\n        # Your code here\n        pass\n\n    def pop(self) -> int:\n        # Your code here\n        pass\n\n    def peek(self) -> int:\n        # Your code here\n        pass\n\n    def empty(self) -> bool:\n        # Your code here\n        pass",
+      "java": "class MyQueue {\n\n    public MyQueue() {\n        // Your code here\n    }\n    \n    public void push(int x) {\n        // Your code here\n    }\n    \n    public int pop() {\n        // Your code here\n    }\n    \n    public int peek() {\n        // Your code here\n    }\n    \n    public boolean empty() {\n        // Your code here\n    }\n}"
+    },
+    "testCases": [
+      {
+        "input": "[\"MyQueue\", \"push\", \"push\", \"peek\", \"pop\", \"empty\"]\n[[], [1], [2], [], [], []]",
+        "expected": "[null, null, null, 1, 1, false]"
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "title": "3Sum",
+    "difficulty": "Medium",
+    "category": "Array",
+    "tags": ["Array", "Two Pointers", "Sorting"],
+    "acceptance_rate": 32.1,
+    "description": {
+      "professional": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+      "humorous": "Three's company! 👫👫👫 Find all the groups of 3 numbers that add up to zero. It's like organizing a group project where everyone's contributions need to balance out perfectly (and no duplicate groups allowed)!",
+      "genz": "Find the perfect trio bestie! ✨ You need three numbers that add up to zero - it's giving 'perfectly balanced' energy. No duplicate groups though, we keep it fresh! 💅"
+    },
+    "examples": [
+      {
+        "input": "nums = [-1,0,1,2,-1,-4]",
+        "output": "[[-1,-1,2],[-1,0,1]]"
+      },
+      {
+        "input": "nums = [0,1,1]",
+        "output": "[]"
+      },
+      {
+        "input": "nums = [0,0,0]",
+        "output": "[[0,0,0]]"
+      }
+    ],
+    "constraints": [
+      "3 ≤ nums.length ≤ 3000",
+      "-10⁵ ≤ nums[i] ≤ 10⁵"
+    ],
+    "startingCode": {
+      "javascript": "function threeSum(nums) {\n    // Your code here\n    \n}",
+      "python": "def three_sum(nums):\n    # Your code here\n    pass",
+      "java": "public List<List<Integer>> threeSum(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[-1,0,1,2,-1,-4]",
+        "expected": "[[-1,-1,2],[-1,0,1]]"
+      },
+      {
+        "input": "[0,1,1]",
+        "expected": "[]"
+      },
+      {
+        "input": "[0,0,0]",
+        "expected": "[[0,0,0]]"
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Search in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "category": "Binary Search",
+    "tags": ["Array", "Binary Search"],
+    "acceptance_rate": 38.7,
+    "description": {
+      "professional": "There is an integer array nums sorted in ascending order (with distinct values). Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2]. Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.",
+      "humorous": "This array got dizzy and rotated! 🌀 Someone spun a perfectly sorted array and now it's all mixed up. You need to find your target number in this topsy-turvy world efficiently!",
+      "genz": "This array really said 'let me switch up the vibe' and rotated itself! 🔄 Find your target in this chaotic but still partially organized mess bestie! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4"
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1"
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1"
+      }
+    ],
+    "constraints": [
+      "1 ≤ nums.length ≤ 5000",
+      "-10⁴ ≤ nums[i] ≤ 10⁴",
+      "All values of nums are unique.",
+      "nums is an ascending array that is possibly rotated.",
+      "-10⁴ ≤ target ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function search(nums, target) {\n    // Your code here\n    \n}",
+      "python": "def search(nums, target):\n    # Your code here\n    pass",
+      "java": "public int search(int[] nums, int target) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[4,5,6,7,0,1,2], 0",
+        "expected": "4"
+      },
+      {
+        "input": "[4,5,6,7,0,1,2], 3",
+        "expected": "-1"
+      },
+      {
+        "input": "[1], 0",
+        "expected": "-1"
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "title": "Container With Most Water",
+    "difficulty": "Medium",
+    "category": "Array",
+    "tags": ["Array", "Two Pointers", "Greedy"],
+    "acceptance_rate": 54.3,
+    "description": {
+      "professional": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the x-axis form a container, such that the container contains the most water.",
+      "humorous": "Water container engineering! 🚧💧 You've got a bunch of walls of different heights, and you need to pick two that can hold the most water between them. Think of it like choosing the best spot for a swimming pool!",
+      "genz": "We're about to build the most iconic water container bestie! 🏊‍♀️ Pick two walls that can hold the maximum amount of water - it's giving 'strategic engineering' energy! ✨"
+    },
+    "examples": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49."
+      },
+      {
+        "input": "height = [1,1]",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "n == height.length",
+      "2 ≤ n ≤ 10⁵",
+      "0 ≤ height[i] ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function maxArea(height) {\n    // Your code here\n    \n}",
+      "python": "def max_area(height):\n    # Your code here\n    pass",
+      "java": "public int maxArea(int[] height) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,8,6,2,5,4,8,3,7]",
+        "expected": "49"
+      },
+      {
+        "input": "[1,1]",
+        "expected": "1"
+      },
+      {
+        "input": "[1,2,1]",
+        "expected": "2"
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "title": "Product of Array Except Self",
+    "difficulty": "Medium",
+    "category": "Array",
+    "tags": ["Array", "Prefix Sum"],
+    "acceptance_rate": 64.1,
+    "description": {
+      "professional": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. You must write an algorithm that runs in O(n) time and without using the division operation.",
+      "humorous": "Everyone gets their moment to shine! ✨ For each number in the array, calculate what the product would be if that number took a coffee break. It's like calculating group productivity when one person calls in sick!",
+      "genz": "Main character treatment for every number! 💅 Each number gets to see what the vibe would be without them - it's giving 'what would happen if I wasn't here' energy bestie! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "[24,12,8,6]"
+      },
+      {
+        "input": "nums = [-1,1,0,-3,3]",
+        "output": "[0,0,9,0,0]"
+      }
+    ],
+    "constraints": [
+      "2 ≤ nums.length ≤ 10⁵",
+      "-30 ≤ nums[i] ≤ 30",
+      "The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer."
+    ],
+    "startingCode": {
+      "javascript": "function productExceptSelf(nums) {\n    // Your code here\n    \n}",
+      "python": "def product_except_self(nums):\n    # Your code here\n    pass",
+      "java": "public int[] productExceptSelf(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,2,3,4]",
+        "expected": "[24,12,8,6]"
+      },
+      {
+        "input": "[-1,1,0,-3,3]",
+        "expected": "[0,0,9,0,0]"
+      },
+      {
+        "input": "[2,3,4,5]",
+        "expected": "[60,40,30,24]"
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "title": "Find Minimum in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "category": "Binary Search",
+    "tags": ["Array", "Binary Search"],
+    "acceptance_rate": 48.7,
+    "description": {
+      "professional": "Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become: [4,5,6,7,0,1,2] if it was rotated 4 times, [0,1,2,4,5,6,7] if it was rotated 7 times. Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]]. Given the sorted rotated array nums of unique elements, return the minimum element of this array.",
+      "humorous": "This array got spun around like a carnival ride! 🎠 Find the smallest number in this dizzy, rotated array. The good news is it was sorted before it got all mixed up!",
+      "genz": "This array really said 'let me spin and serve chaos' 🔄 Find the smallest number in this rotated mess bestie - it's giving 'find order in the chaos' vibes! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [3,4,5,1,2]",
+        "output": "1"
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2]",
+        "output": "0"
+      },
+      {
+        "input": "nums = [11,13,15,17]",
+        "output": "11"
+      }
+    ],
+    "constraints": [
+      "n == nums.length",
+      "1 ≤ n ≤ 5000",
+      "-5000 ≤ nums[i] ≤ 5000",
+      "All the integers of nums are unique.",
+      "nums is sorted and rotated between 1 and n times."
+    ],
+    "startingCode": {
+      "javascript": "function findMin(nums) {\n    // Your code here\n    \n}",
+      "python": "def find_min(nums):\n    # Your code here\n    pass",
+      "java": "public int findMin(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[3,4,5,1,2]",
+        "expected": "1"
+      },
+      {
+        "input": "[4,5,6,7,0,1,2]",
+        "expected": "0"
+      },
+      {
+        "input": "[11,13,15,17]",
+        "expected": "11"
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "title": "House Robber",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "tags": ["Array", "Dynamic Programming"],
+    "acceptance_rate": 49.4,
+    "description": {
+      "professional": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+      "humorous": "Strategic heist planning! 🕵️‍♂️ You're a master thief, but these houses have connected alarms - rob two houses next to each other and you're busted! What's the maximum loot you can get without triggering the security system?",
+      "genz": "We're planning the most strategic heist bestie! 💎 You can't rob adjacent houses or the alarm goes off. What's the maximum bag you can secure without getting caught? It's giving 'smart criminal' energy! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "4",
+        "explanation": "Rob house 1 (money = 1) and then rob house 3 (money = 3). Total amount you can rob = 1 + 3 = 4."
+      },
+      {
+        "input": "nums = [2,7,9,3,1]",
+        "output": "12",
+        "explanation": "Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1). Total amount you can rob = 2 + 9 + 1 = 12."
+      }
+    ],
+    "constraints": [
+      "1 ≤ nums.length ≤ 100",
+      "0 ≤ nums[i] ≤ 400"
+    ],
+    "startingCode": {
+      "javascript": "function rob(nums) {\n    // Your code here\n    \n}",
+      "python": "def rob(nums):\n    # Your code here\n    pass",
+      "java": "public int rob(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,2,3,1]",
+        "expected": "4"
+      },
+      {
+        "input": "[2,7,9,3,1]",
+        "expected": "12"
+      },
+      {
+        "input": "[5,1,3,9]",
+        "expected": "14"
+      }
+    ]
+  },
+  {
+    "id": "33",
+    "title": "Coin Change",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "tags": ["Array", "Dynamic Programming", "Breadth-First Search"],
+    "acceptance_rate": 41.2,
+    "description": {
+      "professional": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+      "humorous": "Coin counting mastery! �� You're at the store with a handful of different coins and need to pay exact change using the fewest coins possible. It's like being the most efficient person at the checkout line!",
+      "genz": "We're about to optimize our coin game bestie! 💰 Use the fewest coins possible to make exact change - it's giving 'minimalist but effective' energy! ✨"
+    },
+    "examples": [
+      {
+        "input": "coins = [1,3,4], amount = 6",
+        "output": "2",
+        "explanation": "The answer is 2, coins = [3,3]."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1"
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0"
+      }
+    ],
+    "constraints": [
+      "1 ≤ coins.length ≤ 12",
+      "1 ≤ coins[i] ≤ 2³± - 1",
+      "0 ≤ amount ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function coinChange(coins, amount) {\n    // Your code here\n    \n}",
+      "python": "def coin_change(coins, amount):\n    # Your code here\n    pass",
+      "java": "public int coinChange(int[] coins, int amount) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,3,4], 6",
+        "expected": "2"
+      },
+      {
+        "input": "[2], 3",
+        "expected": "-1"
+      },
+      {
+        "input": "[1], 0",
+        "expected": "0"
+      }
+    ]
+  },
+  {
+    "id": "34",
+    "title": "Decode Ways",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "tags": ["String", "Dynamic Programming"],
+    "acceptance_rate": 32.4,
+    "description": {
+      "professional": "A message containing letters from A-Z can be encoded into numbers using the following mapping: 'A' -> \"1\", 'B' -> \"2\", ..., 'Z' -> \"26\". To decode an encoded message, all the digits must be grouped and then mapped back into letters using the reverse of the mapping above (there may be multiple ways). Given a string s containing only digits, return the number of ways to decode it.",
+      "humorous": "Secret decoder ring time! 🔍 You've got a string of numbers that represents encoded letters (A=1, B=2, ..., Z=26). How many different ways can you decode this cryptic message? It's like being a spy with multiple valid interpretations!",
+      "genz": "We're about to crack this code bestie! 🔐 These numbers are hiding letters and there might be multiple ways to decode the message. Channel your inner detective and count all possibilities! ✨"
+    },
+    "examples": [
+      {
+        "input": "s = \"12\"",
+        "output": "2",
+        "explanation": "\"12\" could be decoded as \"AB\" (1 2) or \"L\" (12)."
+      },
+      {
+        "input": "s = \"226\"",
+        "output": "3",
+        "explanation": "\"226\" could be decoded as \"BZ\" (2 26), \"VF\" (22 6), or \"BBF\" (2 2 6)."
+      },
+      {
+        "input": "s = \"06\"",
+        "output": "0",
+        "explanation": "\"06\" cannot be mapped to \"F\" because of the leading zero."
+      }
+    ],
+    "constraints": [
+      "1 ≤ s.length ≤ 100",
+      "s contains only digits and may contain leading zero(s)."
+    ],
+    "startingCode": {
+      "javascript": "function numDecodings(s) {\n    // Your code here\n    \n}",
+      "python": "def num_decodings(s):\n    # Your code here\n    pass",
+      "java": "public int numDecodings(String s) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "\"12\"",
+        "expected": "2"
+      },
+      {
+        "input": "\"226\"",
+        "expected": "3"
+      },
+      {
+        "input": "\"06\"",
+        "expected": "0"
+      }
+    ]
+  },
+  {
+    "id": "35",
+    "title": "Unique Paths",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "tags": ["Math", "Dynamic Programming", "Combinatorics"],
+    "acceptance_rate": 62.9,
+    "description": {
+      "professional": "There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time. Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.",
+      "humorous": "Robot pathfinding adventure! 🤖🗺️ Your robot friend can only move right or down (very polite robot), and needs to get from top-left to bottom-right. How many different routes can it take? It's like counting all the ways to get through a maze with very specific rules!",
+      "genz": "This robot is serving main character energy trying to reach its destination! 🤖✨ It can only move right or down (giving 'structured journey' vibes). Count all the possible paths bestie! 💅"
+    },
+    "examples": [
+      {
+        "input": "m = 3, n = 7",
+        "output": "28"
+      },
+      {
+        "input": "m = 3, n = 2",
+        "output": "3",
+        "explanation": "From the top-left corner, there are a total of 3 ways to reach the bottom-right corner: 1. Right -> Down -> Down, 2. Down -> Down -> Right, 3. Down -> Right -> Down"
+      }
+    ],
+    "constraints": [
+      "1 ≤ m, n ≤ 100"
+    ],
+    "startingCode": {
+      "javascript": "function uniquePaths(m, n) {\n    // Your code here\n    \n}",
+      "python": "def unique_paths(m, n):\n    # Your code here\n    pass",
+      "java": "public int uniquePaths(int m, int n) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "3, 7",
+        "expected": "28"
+      },
+      {
+        "input": "3, 2",
+        "expected": "3"
+      },
+      {
+        "input": "1, 1",
+        "expected": "1"
+      }
+    ]
+  },
+  {
+    "id": "36",
+    "title": "Combination Sum",
+    "difficulty": "Medium",
+    "category": "Backtracking",
+    "tags": ["Array", "Backtracking"],
+    "acceptance_rate": 68.1,
+    "description": {
+      "professional": "Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order. The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the frequency of at least one of the chosen numbers is different.",
+      "humorous": "Mix and match number party! 🎉 You have a buffet of numbers and need to find all the different ways to combine them to reach your target sum. The best part? You can use any number as many times as you want (unlimited refills)!",
+      "genz": "It's giving 'create your own combo meal' energy! 🍳 Mix these numbers however you want (unlimited use) to hit your target sum. Find all the iconic combinations bestie! ✨"
+    },
+    "examples": [
+      {
+        "input": "candidates = [2,3,6,7], target = 7",
+        "output": "[[2,2,3],[7]]"
+      },
+      {
+        "input": "candidates = [2,3,5], target = 8",
+        "output": "[[2,2,2,2],[2,3,3],[3,5]]"
+      },
+      {
+        "input": "candidates = [2], target = 1",
+        "output": "[]"
+      }
+    ],
+    "constraints": [
+      "1 ≤ candidates.length ≤ 30",
+      "2 ≤ candidates[i] ≤ 40",
+      "All elements of candidates are distinct.",
+      "1 ≤ target ≤ 40"
+    ],
+    "startingCode": {
+      "javascript": "function combinationSum(candidates, target) {\n    // Your code here\n    \n}",
+      "python": "def combination_sum(candidates, target):\n    # Your code here\n    pass",
+      "java": "public List<List<Integer>> combinationSum(int[] candidates, int target) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[2,3,6,7], 7",
+        "expected": "[[2,2,3],[7]]"
+      },
+      {
+        "input": "[2,3,5], 8",
+        "expected": "[[2,2,2,2],[2,3,3],[3,5]]"
+      },
+      {
+        "input": "[2], 1",
+        "expected": "[]"
+      }
+    ]
+  },
+  {
+    "id": "37",
+    "title": "Word Break",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "tags": ["Array", "Hash Table", "String", "Dynamic Programming", "Trie", "Memoization"],
+    "acceptance_rate": 46.3,
+    "description": {
+      "professional": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. Note that the same word in the dictionary may be reused multiple times in the segmentation.",
+      "humorous": "Word puzzle time! 🧩 You've got a long string with no spaces and a dictionary of valid words. Can you break this string into recognizable words using only your dictionary? It's like being a human spell-checker!",
+      "genz": "Can we make this string make sense bestie? 💬 You've got a dictionary of valid words - check if you can break this string into actual words that slap! It's giving 'decode the message' vibes! ✨"
+    },
+    "examples": [
+      {
+        "input": "s = \"leetcode\", wordDict = [\"leet\",\"code\"]",
+        "output": "true",
+        "explanation": "Return true because \"leetcode\" can be segmented as \"leet code\"."
+      },
+      {
+        "input": "s = \"applepenapple\", wordDict = [\"apple\",\"pen\"]",
+        "output": "true",
+        "explanation": "Return true because \"applepenapple\" can be segmented as \"apple pen apple\"."
+      },
+      {
+        "input": "s = \"catsandog\", wordDict = [\"cats\",\"dog\",\"sand\",\"and\",\"cat\"]",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "1 ≤ s.length ≤ 300",
+      "1 ≤ wordDict.length ≤ 1000",
+      "1 ≤ wordDict[i].length ≤ 20",
+      "s and wordDict[i] consist of only lowercase English letters.",
+      "All the strings of wordDict are unique."
+    ],
+    "startingCode": {
+      "javascript": "function wordBreak(s, wordDict) {\n    // Your code here\n    \n}",
+      "python": "def word_break(s, word_dict):\n    # Your code here\n    pass",
+      "java": "public boolean wordBreak(String s, List<String> wordDict) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "\"leetcode\", [\"leet\",\"code\"]",
+        "expected": "true"
+      },
+      {
+        "input": "\"applepenapple\", [\"apple\",\"pen\"]",
+        "expected": "true"
+      },
+      {
+        "input": "\"catsandog\", [\"cats\",\"dog\",\"sand\",\"and\",\"cat\"]",
+        "expected": "false"
+      }
+    ]
+  },
+  {
+    "id": "38",
+    "title": "Trapping Rain Water",
+    "difficulty": "Hard",
+    "category": "Array",
+    "tags": ["Array", "Two Pointers", "Dynamic Programming", "Stack", "Monotonic Stack"],
+    "acceptance_rate": 58.9,
+    "description": {
+      "professional": "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.",
+      "humorous": "Weather engineering! 🌧️🚧 You've got a landscape with different heights and it's about to rain. Calculate how much rainwater will get trapped between the hills and valleys. It's like being a meteorologist architect!",
+      "genz": "We're about to calculate nature's water collection system bestie! 🌊 Rain is coming and these elevation changes are going to trap water. How much can this terrain hold? It's giving 'natural engineering' vibes! ✨"
+    },
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9"
+      }
+    ],
+    "constraints": [
+      "n == height.length",
+      "1 ≤ n ≤ 2 * 10⁴",
+      "0 ≤ height[i] ≤ 3 * 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function trap(height) {\n    // Your code here\n    \n}",
+      "python": "def trap(height):\n    # Your code here\n    pass",
+      "java": "public int trap(int[] height) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[0,1,0,2,1,0,1,3,2,1,2,1]",
+        "expected": "6"
+      },
+      {
+        "input": "[4,2,0,3,2,5]",
+        "expected": "9"
+      },
+      {
+        "input": "[3,0,2,0,4]",
+        "expected": "10"
+      }
+    ]
+  },
+  {
+    "id": "39",
+    "title": "Median of Two Sorted Arrays",
+    "difficulty": "Hard",
+    "category": "Binary Search",
+    "tags": ["Array", "Binary Search", "Divide and Conquer"],
+    "acceptance_rate": 36.4,
+    "description": {
+      "professional": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two arrays. The overall run time complexity should be O(log (m+n)).",
+      "humorous": "Mathematical middle child finder! 📊 You have two perfectly organized arrays and need to find the exact middle value if you combined them. It's like finding the perfect balance point in a very orderly universe!",
+      "genz": "Find the perfect middle ground bestie! ⚖️ These two sorted arrays need their combined median - it's giving 'perfectly balanced' energy. The challenge? Do it efficiently! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums1 = [1,3], nums2 = [2]",
+        "output": "2.00000",
+        "explanation": "merged array = [1,2,3] and median is 2."
+      },
+      {
+        "input": "nums1 = [1,2], nums2 = [3,4]",
+        "output": "2.50000",
+        "explanation": "merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "constraints": [
+      "nums1.length == m",
+      "nums2.length == n",
+      "0 ≤ m ≤ 1000",
+      "0 ≤ n ≤ 1000",
+      "1 ≤ m + n ≤ 2000",
+      "-10⁶ ≤ nums1[i], nums2[i] ≤ 10⁶"
+    ],
+    "startingCode": {
+      "javascript": "function findMedianSortedArrays(nums1, nums2) {\n    // Your code here\n    \n}",
+      "python": "def find_median_sorted_arrays(nums1, nums2):\n    # Your code here\n    pass",
+      "java": "public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,3], [2]",
+        "expected": "2.0"
+      },
+      {
+        "input": "[1,2], [3,4]",
+        "expected": "2.5"
+      },
+      {
+        "input": "[0,0], [0,0]",
+        "expected": "0.0"
+      }
+    ]
+  },
+  {
+    "id": "40",
+    "title": "Merge k Sorted Lists",
+    "difficulty": "Hard",
+    "category": "Linked List",
+    "tags": ["Linked List", "Divide and Conquer", "Heap (Priority Queue)", "Merge Sort"],
+    "acceptance_rate": 47.6,
+    "description": {
+      "professional": "You are given an array of k linked-lists lists, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it.",
+      "humorous": "Ultimate linked list merger! 🔗🎆 You've got k different sorted linked lists that need to become one mega-sorted list. It's like organizing k different orderly queues into one super-organized line!",
+      "genz": "Time to merge all these organized lists into one iconic mega-list bestie! ✨ Each list is already serving sorted energy, now combine them all while keeping that perfect order! It's giving 'unity but make it structured'! 💅"
+    },
+    "examples": [
+      {
+        "input": "lists = [[1,4,5],[1,3,4],[2,6]]",
+        "output": "[1,1,2,3,4,4,5,6]"
+      },
+      {
+        "input": "lists = []",
+        "output": "[]"
+      },
+      {
+        "input": "lists = [[]]",
+        "output": "[]"
+      }
+    ],
+    "constraints": [
+      "k == lists.length",
+      "0 ≤ k ≤ 10⁴",
+      "0 ≤ lists[i].length ≤ 500",
+      "-10⁴ ≤ lists[i][j] ≤ 10⁴",
+      "lists[i] is sorted in ascending order.",
+      "The sum of lists[i].length will not exceed 10⁴."
+    ],
+    "startingCode": {
+      "javascript": "function mergeKLists(lists) {\n    // Your code here\n    \n}",
+      "python": "def merge_k_lists(lists):\n    # Your code here\n    pass",
+      "java": "public ListNode mergeKLists(ListNode[] lists) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1,4,5],[1,3,4],[2,6]]",
+        "expected": "[1,1,2,3,4,4,5,6]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[[]]",
+        "expected": "[]"
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "title": "Maximum Depth of Binary Tree",
+    "difficulty": "Easy",
+    "category": "Tree",
+    "tags": ["Tree", "Depth-First Search", "Breadth-First Search", "Binary Tree"],
+    "acceptance_rate": 74.3,
+    "description": {
+      "professional": "Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+      "humorous": "Time to play tree climber! 🌳 You need to figure out how tall this binary tree is by counting how many levels deep you can go before you run out of branches. It's like finding the tallest branch in a family tree, but with way more recursion and less family drama!",
+      "genz": "Bestie, we're about to climb this binary tree and see how deep it goes! 🌲 Count all the levels from the root all the way down to the deepest leaf - it's giving 'reach for the stars' energy but make it data structures! ✨"
+    },
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "3",
+        "explanation": "The maximum depth is 3."
+      },
+      {
+        "input": "root = [1,null,2]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10⁴].",
+      "-100 ≤ Node.val ≤ 100"
+    ],
+    "startingCode": {
+      "javascript": "function maxDepth(root) {\n    // Your code here\n    \n}",
+      "python": "def max_depth(root):\n    # Your code here\n    pass",
+      "java": "public int maxDepth(TreeNode root) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[3,9,20,null,null,15,7]",
+        "expected": "3"
+      },
+      {
+        "input": "[1,null,2]",
+        "expected": "2"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "title": "Graph Valid Tree",
+    "difficulty": "Medium",
+    "category": "Graph",
+    "tags": ["Graph", "Union Find", "Depth-First Search", "Breadth-First Search"],
+    "acceptance_rate": 45.8,
+    "description": {
+      "professional": "You have a graph of n nodes labeled from 0 to n - 1. You are given an integer n and a list of edges where edges[i] = [ai, bi] indicates that there is an undirected edge between nodes ai and bi in the graph. Return true if the given graph is a valid tree, false otherwise.",
+      "humorous": "Detective time! 🕵️‍♀️ You've got a bunch of nodes and edges, and you need to figure out if they form a proper tree or if they're just pretending. A real tree has exactly n-1 edges, is connected, and has no cycles (unlike your life drama). Can you spot the impostor?",
+      "genz": "Okay bestie, time to verify if this graph is actually tree material! 🌳 A valid tree needs to be connected (no one left out), have exactly n-1 edges (not too clingy, not too distant), and zero cycles (we don't do toxic circular relationships here). Can you check if it passes the vibe check? ✨"
+    },
+    "examples": [
+      {
+        "input": "n = 5, edges = [[0,1],[0,2],[0,3],[1,4]]",
+        "output": "true"
+      },
+      {
+        "input": "n = 5, edges = [[0,1],[1,2],[2,3],[1,3],[1,4]]",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "1 ≤ n ≤ 2000",
+      "0 ≤ edges.length ≤ 5000",
+      "edges[i].length == 2",
+      "0 ≤ ai, bi < n",
+      "ai != bi",
+      "There are no self-loops or repeated edges."
+    ],
+    "startingCode": {
+      "javascript": "function validTree(n, edges) {\n    // Your code here\n    \n}",
+      "python": "def valid_tree(n, edges):\n    # Your code here\n    pass",
+      "java": "public boolean validTree(int n, int[][] edges) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "5, [[0,1],[0,2],[0,3],[1,4]]",
+        "expected": "true"
+      },
+      {
+        "input": "5, [[0,1],[1,2],[2,3],[1,3],[1,4]]",
+        "expected": "false"
+      },
+      {
+        "input": "1, []",
+        "expected": "true"
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "title": "House Robber",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "tags": ["Array", "Dynamic Programming"],
+    "acceptance_rate": 47.2,
+    "description": {
+      "professional": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. The only constraint is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+      "humorous": "Congratulations, you're now a professional house robber! 🥷 But here's the catch - these homeowners have Ring doorbells that are connected, so you can't rob two houses next to each other or the neighbors will call the cops. Your mission: maximize your loot without getting caught. Time to channel your inner cat burglar (but make it legal and algorithmic)!",
+      "genz": "Bestie, you're about to become the main character of a heist movie! 💎 You can rob these houses but if you hit two houses next to each other, the security systems will snitch on you fr. Your goal is to get the most money possible without triggering the alarms. It's giving 'strategic planning' energy - work smarter not harder! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "4",
+        "explanation": "Rob house 1 (money = 1) and then rob house 3 (money = 3). Total amount you can rob = 1 + 3 = 4."
+      },
+      {
+        "input": "nums = [2,7,9,3,1]",
+        "output": "12",
+        "explanation": "Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1). Total amount you can rob = 2 + 9 + 1 = 12."
+      }
+    ],
+    "constraints": [
+      "1 ≤ nums.length ≤ 100",
+      "0 ≤ nums[i] ≤ 400"
+    ],
+    "startingCode": {
+      "javascript": "function rob(nums) {\n    // Your code here\n    \n}",
+      "python": "def rob(nums):\n    # Your code here\n    pass",
+      "java": "public int rob(int[] nums) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,2,3,1]",
+        "expected": "4"
+      },
+      {
+        "input": "[2,7,9,3,1]",
+        "expected": "12"
+      },
+      {
+        "input": "[2,1,1,2]",
+        "expected": "4"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "title": "Design Hash Map",
+    "difficulty": "Easy",
+    "category": "Hash Table",
+    "tags": ["Array", "Hash Table", "Linked List", "Design"],
+    "acceptance_rate": 63.1,
+    "description": {
+      "professional": "Design a HashMap without using any built-in hash table libraries. Implement the MyHashMap class: MyHashMap() initializes the object with an empty map. void put(int key, int value) inserts a (key, value) pair into the HashMap. If the key already exists in the map, update the corresponding value. int get(int key) returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key. void remove(key) removes the key and its corresponding value if the map contains the mapping for the key.",
+      "humorous": "Time to build your own hash map from scratch! 🛠️ It's like being asked to build a filing cabinet when you've only ever used smartphones. You need to create a magical box that can store key-value pairs and find them super fast. No cheating with built-in hash tables - we're going old school, baby!",
+      "genz": "Bestie, we're about to build our own hash map because apparently using the built-in ones is too mainstream! 💅 You need to create a data structure that can store key-value pairs and retrieve them quickly. It's giving 'DIY queen' energy - we're building this from the ground up! ✨"
+    },
+    "examples": [
+      {
+        "input": "[\"MyHashMap\", \"put\", \"put\", \"get\", \"get\", \"put\", \"get\", \"remove\", \"get\"]\\n[[], [1, 1], [2, 2], [1], [3], [2, 1], [2], [2], [2]]",
+        "output": "[null, null, null, 1, -1, null, 1, null, -1]",
+        "explanation": "MyHashMap myHashMap = new MyHashMap();\\nmyHashMap.put(1, 1); // The map is now [[1,1]]\\nmyHashMap.put(2, 2); // The map is now [[1,1], [2,2]]\\nmyHashMap.get(1);    // return 1, The map is now [[1,1], [2,2]]\\nmyHashMap.get(3);    // return -1 (i.e., not found), The map is now [[1,1], [2,2]]\\nmyHashMap.put(2, 1); // The map is now [[1,1], [2,1]] (i.e., update the existing value)\\nmyHashMap.get(2);    // return 1, The map is now [[1,1], [2,1]]\\nmyHashMap.remove(2); // remove the mapping for 2, The map is now [[1,1]]\\nmyHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]"
+      }
+    ],
+    "constraints": [
+      "0 ≤ key, value ≤ 10⁶",
+      "At most 10⁴ calls will be made to put, get, and remove."
+    ],
+    "startingCode": {
+      "javascript": "class MyHashMap {\n    constructor() {\n        // Your code here\n    }\n    \n    put(key, value) {\n        // Your code here\n    }\n    \n    get(key) {\n        // Your code here\n    }\n    \n    remove(key) {\n        // Your code here\n    }\n}",
+      "python": "class MyHashMap:\n    def __init__(self):\n        # Your code here\n        pass\n    \n    def put(self, key, value):\n        # Your code here\n        pass\n    \n    def get(self, key):\n        # Your code here\n        pass\n    \n    def remove(self, key):\n        # Your code here\n        pass",
+      "java": "class MyHashMap {\n    public MyHashMap() {\n        // Your code here\n    }\n    \n    public void put(int key, int value) {\n        // Your code here\n    }\n    \n    public int get(int key) {\n        // Your code here\n    }\n    \n    public void remove(int key) {\n        // Your code here\n    }\n}"
+    },
+    "testCases": [
+      {
+        "input": "[\"MyHashMap\", \"put\", \"put\", \"get\", \"get\", \"put\", \"get\"]\\n[[], [1, 1], [2, 2], [1], [3], [2, 1], [2]]",
+        "expected": "[null, null, null, 1, -1, null, 1]"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "title": "Coin Change",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "tags": ["Array", "Dynamic Programming", "Breadth-First Search"],
+    "acceptance_rate": 40.7,
+    "description": {
+      "professional": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1. You may assume that you have an infinite number of each kind of coin.",
+      "humorous": "Welcome to the world's most overthought vending machine! 🪙 You've got unlimited coins of certain denominations, and you need to make exact change using the fewest coins possible. It's like being a cashier, but the register is broken and you have to figure out the math yourself. Can you make change without making everyone behind you in line angry?",
+      "genz": "Bestie, you're about to become the most efficient cashier ever! 💰 You have unlimited coins in certain denominations and need to make exact change using as few coins as possible. If you can't make the exact amount, just say so (return -1). It's giving 'optimal solution' energy - work smarter not harder! ✨"
+    },
+    "examples": [
+      {
+        "input": "coins = [1,3,4], amount = 6",
+        "output": "2",
+        "explanation": "The minimum number of coins is 2 (3 + 3 = 6)."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "The amount of 3 cannot be made up just with coins of 2."
+      }
+    ],
+    "constraints": [
+      "1 ≤ coins.length ≤ 12",
+      "1 ≤ coins[i] ≤ 2³¹ - 1",
+      "0 ≤ amount ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function coinChange(coins, amount) {\n    // Your code here\n    \n}",
+      "python": "def coin_change(coins, amount):\n    # Your code here\n    pass",
+      "java": "public int coinChange(int[] coins, int amount) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[1,3,4], 6",
+        "expected": "2"
+      },
+      {
+        "input": "[2], 3",
+        "expected": "-1"
+      },
+      {
+        "input": "[1], 0",
+        "expected": "0"
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Spiral Matrix",
+    "difficulty": "Medium",
+    "category": "Matrix",
+    "tags": ["Array", "Matrix", "Simulation"],
+    "acceptance_rate": 44.9,
+    "description": {
+      "professional": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+      "humorous": "Time to take a scenic route through a matrix! 🌀 Instead of going row by row like a boring person, you need to traverse this matrix in a spiral pattern - start from the top-left, go right, then down, then left, then up, and keep spiraling inward until you've visited every element. It's like a tornado made of numbers!",
+      "genz": "Bestie, we're about to turn this matrix into a spiral adventure! 🌪️ Start from the top-left corner and move in a spiral pattern (right → down → left → up) until you've collected all the elements. It's giving main character taking the scenic route energy! ✨"
+    },
+    "examples": [
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[1,2,3,6,9,8,7,4,5]"
+      },
+      {
+        "input": "matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]",
+        "output": "[1,2,3,4,8,12,11,10,9,5,6,7]"
+      }
+    ],
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[i].length",
+      "1 ≤ m, n ≤ 10",
+      "-100 ≤ matrix[i][j] ≤ 100"
+    ],
+    "startingCode": {
+      "javascript": "function spiralOrder(matrix) {\n    // Your code here\n    \n}",
+      "python": "def spiral_order(matrix):\n    # Your code here\n    pass",
+      "java": "public List<Integer> spiralOrder(int[][] matrix) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1,2,3],[4,5,6],[7,8,9]]",
+        "expected": "[1,2,3,6,9,8,7,4,5]"
+      },
+      {
+        "input": "[[1,2,3,4],[5,6,7,8],[9,10,11,12]]",
+        "expected": "[1,2,3,4,8,12,11,10,9,5,6,7]"
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Search in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "category": "Binary Search",
+    "tags": ["Array", "Binary Search"],
+    "acceptance_rate": 38.9,
+    "description": {
+      "professional": "There is an integer array nums sorted in ascending order (with distinct values). Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 ≤ k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2]. Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums. You must write an algorithm with O(log n) runtime complexity.",
+      "humorous": "Plot twist! 🌪️ Someone took a perfectly sorted array and gave it a spin (literally rotated it at some random point). Now you need to find a target value in this dizzy array. It's like trying to find your keys after your cat knocked over your organized desk - everything is still there, just... rearranged. Can you find it efficiently without checking every single spot?",
+      "genz": "Bestie, someone said 'let's shake things up' and rotated this sorted array! 🔄 Now you need to find your target value in this twisted array, but plot twist - you still need to do it super efficiently (O(log n) time). It's giving 'finding your way in a funhouse mirror maze' energy. You got this! ✨"
+    },
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4"
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1"
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1"
+      }
+    ],
+    "constraints": [
+      "1 ≤ nums.length ≤ 5000",
+      "-10⁴ ≤ nums[i] ≤ 10⁴",
+      "All values of nums are unique.",
+      "nums is an ascending array that is possibly rotated.",
+      "-10⁴ ≤ target ≤ 10⁴"
+    ],
+    "startingCode": {
+      "javascript": "function search(nums, target) {\n    // Your code here\n    \n}",
+      "python": "def search(nums, target):\n    # Your code here\n    pass",
+      "java": "public int search(int[] nums, int target) {\n    // Your code here\n    \n}"
+    },
+    "testCases": [
+      {
+        "input": "[4,5,6,7,0,1,2], 0",
+        "expected": "4"
+      },
+      {
+        "input": "[4,5,6,7,0,1,2], 3",
+        "expected": "-1"
+      },
+      {
+        "input": "[1], 0",
+        "expected": "-1"
+      }
+    ]
+  }
+]
