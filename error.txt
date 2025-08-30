@@ -1,28 +1,24 @@
 stage-0
 RUN npm run build
-14s
+7s
 npm warn config production Use `--omit=dev` instead.
 > feetcode@0.1.0 build
 > next build
-Attention: Next.js now collects completely anonymous telemetry regarding usage.
-This information is used to shape Next.js' roadmap and prioritize features.
-You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-https://nextjs.org/telemetry
    ▲ Next.js 14.0.0
    Creating an optimized production build ...
  ✓ Compiled successfully
    Linting and checking validity of types ...
 Failed to compile.
-./components/modern/Navbar.tsx:191:27
-Type error: Property 'username' does not exist on type 'never'.
+./components/modern/Navbar.tsx:201:31
+Type error: Property 'problems_solved' does not exist on type '{ username?: string | undefined; email?: string | undefined; }'.
 
-  189 |                 >
-  190 |                   <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-500 rounded-full flex items-center justify-center text-primary-foreground text-sm font-semibold">
-> 191 |                     {user.username?.[0]?.toUpperCase() || '?'}
-      |                           ^
-  192 |                   </div>
-  193 |                   <span className="hidden lg:inline font-medium">{user.username}</span>
-  194 |                 </button>
+  199 |                       <p className="font-semibold">{user.username}</p>
+  200 |                       <p className="text-sm text-muted-foreground">
+> 201 |                         {user.problems_solved || 0} problems solved
+      |                               ^
+  202 |                       </p>
+  203 |                     </div>
+  204 |                     
 Dockerfile:24
 -------------------
 22 |     # build phase
