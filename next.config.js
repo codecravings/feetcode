@@ -5,7 +5,7 @@ const nextConfig = {
       {
         source: '/api/server/:path*',
         destination: process.env.NODE_ENV === 'production' 
-          ? 'https://your-backend-url.railway.app/api/:path*'
+          ? 'https://feet-code.up.railway.app/api/:path*'
           : 'http://localhost:5001/api/:path*',
       },
     ]
