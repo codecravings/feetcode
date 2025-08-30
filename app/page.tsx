@@ -263,7 +263,7 @@ export default function ModernHome() {
                 <h4 className="font-semibold mb-2">{content.title}</h4>
                 <p className="text-muted-foreground text-sm mb-4">{content.subtitle}</p>
                 <button 
-                  onClick={() => setVibe(key)}
+                  onClick={() => setVibe(key as 'professional' | 'humorous' | 'genz')}
                   className="w-full btn-primary"
                 >
                   {content.cta}
