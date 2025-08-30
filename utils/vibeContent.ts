@@ -216,7 +216,7 @@ export const getVibeContent = (category: string, key: string, vibe: string = 'pr
     if (!specificContent) return { message: 'Content not found' }
     
     const vibeSpecific = specificContent[vibe as keyof typeof specificContent]
-    return vibeSpecific || specificContent.professional || { message: 'Content not found' }
+    return vibeSpecific || (specificContent as any).professional || { message: 'Content not found' }
   } catch (error) {
     return { message: 'Content not found' }
   }
