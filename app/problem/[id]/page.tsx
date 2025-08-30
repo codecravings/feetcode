@@ -128,7 +128,7 @@ export default function ProblemPage() {
       ]
     }
     setProblem(sampleProblem)
-    setCode(sampleProblem.startingCode[selectedLanguage])
+    setCode(sampleProblem.startingCode[selectedLanguage as keyof typeof sampleProblem.startingCode])
   }
 
   const getVibeDescription = () => {

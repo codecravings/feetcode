@@ -1,24 +1,29 @@
 stage-0
 RUN npm run build
-7s
+12s
 npm warn config production Use `--omit=dev` instead.
 > feetcode@0.1.0 build
 > next build
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
    ▲ Next.js 14.0.0
    Creating an optimized production build ...
  ✓ Compiled successfully
    Linting and checking validity of types ...
 Failed to compile.
-./app/page.tsx:266:42
-Type error: Argument of type 'string' is not assignable to parameter of type '"professional" | "humorous" | "genz"'.
+./app/problem/[id]/page.tsx:131:13
+Type error: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ javascript: string; python: string; java: string; }'.
 
-  264 |                 <p className="text-muted-foreground text-sm mb-4">{content.subtitle}</p>
-  265 |                 <button 
-> 266 |                   onClick={() => setVibe(key)}
-      |                                          ^
-  267 |                   className="w-full btn-primary"
-  268 |                 >
-  269 |                   {content.cta}
+  No index signature with a parameter of type 'string' was found on type '{ javascript: string; python: string; java: string; }'.
+  129 |     }
+  130 |     setProblem(sampleProblem)
+> 131 |     setCode(sampleProblem.startingCode[selectedLanguage])
+      |             ^
+  132 |   }
+  133 |
+  134 |   const getVibeDescription = () => {
 Dockerfile:24
 -------------------
 22 |     # build phase
