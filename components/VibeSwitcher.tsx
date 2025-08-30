@@ -1,6 +1,6 @@
 'use client'
 
-import { useVibeSwitcher } from '../hooks/useVibe.tsx'
+import { useVibeSwitcher } from '../hooks/useVibe'
 
 interface VibeSwitcherProps {
   className?: string

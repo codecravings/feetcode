@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useVibe } from '../../hooks/useVibe.tsx'
+import { useVibe } from '../../hooks/useVibe'
 import ModernNavbar from '../../components/modern/Navbar'
 import CodeTinder from '../../components/modern/CodeTinder'
 import FeetCoins from '../../components/modern/FeetCoins'

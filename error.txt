@@ -1,6 +1,6 @@
 stage-0
 RUN npm run build
-7s
+6s
 npm warn config production Use `--omit=dev` instead.
 > feetcode@0.1.0 build
 > next build
@@ -9,16 +9,16 @@ npm warn config production Use `--omit=dev` instead.
  ✓ Compiled successfully
    Linting and checking validity of types ...
 Failed to compile.
-./hooks/useVibe-simple.ts:39:6
-Type error: Cannot find namespace 'VibeContext'.
+./app/dashboard/page.tsx:4:25
+Type error: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
 
-  37 |
-  38 |   return (
-> 39 |     <VibeContext.Provider value={contextValue}>
-     |      ^
-  40 |       {children}
-  41 |     </VibeContext.Provider>
-  42 |   )
+  2 |
+  3 | import React, { useState, useEffect } from 'react'
+> 4 | import { useVibe } from '../../hooks/useVibe.tsx'
+    |                         ^
+  5 | import ModernNavbar from '../../components/modern/Navbar'
+  6 | import Link from 'next/link'
+  7 | import DailyChallengeCard from '../../components/DailyChallengeCard'
 Dockerfile:24
 -------------------
 22 |     # build phase

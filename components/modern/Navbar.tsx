@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTheme } from '../../hooks/useTheme'
-import { useVibe } from '../../hooks/useVibe.tsx'
+import { useVibe } from '../../hooks/useVibe'
 import AuthModal from '../auth/AuthModal'
 import { 
   Code2, 

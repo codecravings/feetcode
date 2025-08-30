@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Trophy, Star, Flame, Zap, Target, Crown, Award, Medal } from 'lucide-react'
-import { useVibe } from '../hooks/useVibe.tsx'
+import { useVibe } from '../hooks/useVibe'
 
 interface Achievement {
   id: string
