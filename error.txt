@@ -1,0 +1,35 @@
+stage-0
+RUN npm run build
+9s
+npm warn config production Use `--omit=dev` instead.
+> feetcode@0.1.0 build
+> next build
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+   ▲ Next.js 14.0.0
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+./app/page-simple.tsx:41:38
+Type error: Argument of type 'string' is not assignable to parameter of type 'SetStateAction<"professional" | "humorous" | "genz">'.
+
+  39 |             <button
+  40 |               key={vibeKey}
+> 41 |               onClick={() => setVibe(vibeKey)}
+     |                                      ^
+  42 |               className={`px-4 py-2 rounded-lg capitalize transition-all ${
+  43 |                 vibe === vibeKey
+  44 |                   ? 'bg-blue-600 text-white'
+Dockerfile:24
+-------------------
+22 |     # build phase
+23 |     COPY . /app/.
+24 | >>> RUN --mount=type=cache,id=s/ce7ffde0-6425-475a-9a5d-f7c30b596a77-next/cache,target=/app/.next/cache --mount=type=cache,id=s/ce7ffde0-6425-475a-9a5d-f7c30b596a77-node_modules/cache,target=/app/node_modules/.cache npm run build
+25 |
+26 |
+-------------------
+ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+Error: Docker build failed

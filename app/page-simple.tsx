@@ -38,7 +38,7 @@ export default function Home() {
           {Object.keys(vibeContent).map((vibeKey) => (
             <button
               key={vibeKey}
-              onClick={() => setVibe(vibeKey)}
+              onClick={() => setVibe(vibeKey as 'professional' | 'humorous' | 'genz')}
               className={`px-4 py-2 rounded-lg capitalize transition-all ${
                 vibe === vibeKey
                   ? 'bg-blue-600 text-white'
