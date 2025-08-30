@@ -24,7 +24,7 @@ export default function Home() {
     }
   }
 
-  const currentContent = vibeContent[vibe]
+  const currentContent = vibeContent[vibe as keyof typeof vibeContent]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">

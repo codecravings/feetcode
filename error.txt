@@ -1,3 +1,4 @@
+stage-0
 RUN npm run build
 7s
 npm warn config production Use `--omit=dev` instead.

@@ -145,7 +145,7 @@ export default function ModernNavbar() {
               {Object.entries(vibeConfig).map(([key, config]) => (
                 <button
                   key={key}
-                  onClick={() => setVibe(key)}
+                  onClick={() => setVibe(key as 'professional' | 'humorous' | 'genz')}
                   className={`relative px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
                     vibe === key
                       ? 'bg-white dark:bg-gray-800 shadow-sm text-foreground'
@@ -280,7 +280,7 @@ export default function ModernNavbar() {
                   {Object.entries(vibeConfig).map(([key, config]) => (
                     <button
                       key={key}
-                      onClick={() => setVibe(key)}
+                      onClick={() => setVibe(key as 'professional' | 'humorous' | 'genz')}
                       className={`p-2 rounded-lg text-sm font-medium transition-all ${
                         vibe === key
                           ? 'bg-primary text-primary-foreground'

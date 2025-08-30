@@ -34,7 +34,7 @@ export default function VibeSwitcher({
       <div className={`relative ${className}`}>
         <select
           value={currentVibe}
-          onChange={(e) => setVibe(e.target.value as any)}
+          onChange={(e) => setVibe(e.target.value as 'professional' | 'humorous' | 'genz')}
           className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         >
           {vibeOptions.map((option) => (
