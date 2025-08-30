@@ -13,17 +13,16 @@ https://nextjs.org/telemetry
  ✓ Compiled successfully
    Linting and checking validity of types ...
 Failed to compile.
-./app/problem/[id]/page.tsx:131:13
-Type error: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ javascript: string; python: string; java: string; }'.
+./components/ViralStats.tsx:4:56
+Type error: Module '"lucide-react"' has no exported member 'Fire'.
 
-  No index signature with a parameter of type 'string' was found on type '{ javascript: string; python: string; java: string; }'.
-  129 |     }
-  130 |     setProblem(sampleProblem)
-> 131 |     setCode(sampleProblem.startingCode[selectedLanguage])
-      |             ^
-  132 |   }
-  133 |
-  134 |   const getVibeDescription = () => {
+  2 |
+  3 | import { useState, useEffect } from 'react'
+> 4 | import { TrendingUp, Clock, Zap, Target, Users, Crown, Fire, Share2 } from 'lucide-react'
+    |                                                        ^
+  5 | import { useVibe } from '../hooks/useVibe'
+  6 |
+  7 | export default function ViralStats() {
 Dockerfile:24
 -------------------
 22 |     # build phase
