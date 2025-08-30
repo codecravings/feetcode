@@ -45,6 +45,9 @@ export default function ProblemsPage() {
       if (response.ok) {
         const data = await response.json()
         setProblems(data.problems || [])
+      } else {
+        // Use sample data if API fails
+        setSampleProblems()
       }
     } catch (error) {
       console.error('Failed to fetch problems:', error)
