@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, createContext, useContext, ReactNode } from 'react'
+import React, { useState, useEffect, createContext, useContext, ReactNode } from 'react'
 
 type Vibe = 'professional' | 'humorous' | 'genz'
 

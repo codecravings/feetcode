@@ -1,6 +1,6 @@
 stage-0
 RUN npm run build
-7s
+8s
 npm warn config production Use `--omit=dev` instead.
 > feetcode@0.1.0 build
 > next build
@@ -9,16 +9,16 @@ npm warn config production Use `--omit=dev` instead.
  ✓ Compiled successfully
    Linting and checking validity of types ...
 Failed to compile.
-./components/modern/Navbar.tsx:201:31
-Type error: Property 'problems_solved' does not exist on type '{ username?: string | undefined; email?: string | undefined; }'.
+./hooks/useVibe-simple.ts:39:6
+Type error: Cannot find namespace 'VibeContext'.
 
-  199 |                       <p className="font-semibold">{user.username}</p>
-  200 |                       <p className="text-sm text-muted-foreground">
-> 201 |                         {user.problems_solved || 0} problems solved
-      |                               ^
-  202 |                       </p>
-  203 |                     </div>
-  204 |                     
+  37 |
+  38 |   return (
+> 39 |     <VibeContext.Provider value={contextValue}>
+     |      ^
+  40 |       {children}
+  41 |     </VibeContext.Provider>
+  42 |   )
 Dockerfile:24
 -------------------
 22 |     # build phase
