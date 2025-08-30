@@ -1,31 +1,134 @@
-stage-0
-RUN npm run build
-6s
-npm warn config production Use `--omit=dev` instead.
-> feetcode@0.1.0 build
-> next build
-   ▲ Next.js 14.0.0
-   Creating an optimized production build ...
- ✓ Compiled successfully
-   Linting and checking validity of types ...
-Failed to compile.
-./utils/vibeContent.ts:219:44
-Type error: Property 'professional' does not exist on type 'never'.
+Starting Container
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+Node.js v18.20.5
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
 
-  217 |     
-  218 |     const vibeSpecific = specificContent[vibe as keyof typeof specificContent]
-> 219 |     return vibeSpecific || specificContent.professional || { message: 'Content not found' }
-      |                                            ^
-  220 |   } catch (error) {
-  221 |     return { message: 'Content not found' }
-  222 |   }
-Dockerfile:24
--------------------
-22 |     # build phase
-23 |     COPY . /app/.
-24 | >>> RUN --mount=type=cache,id=s/ce7ffde0-6425-475a-9a5d-f7c30b596a77-next/cache,target=/app/.next/cache --mount=type=cache,id=s/ce7ffde0-6425-475a-9a5d-f7c30b596a77-node_modules/cache,target=/app/node_modules/.cache npm run build
-25 |
-26 |
--------------------
-ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
-Error: Docker build failed
+ode.js v18.20.5
+Stopping Container
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+Node.js v18.20.5
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+Node.js v18.20.5
+npm error path /app
+npm error command failed
+npm error signal SIGTERM
+npm error command sh -c next start
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-08-30T11_44_52_975Z-debug-0.log
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+Node.js v18.20.5
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+  Node.js v18.20.5
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+Node.js v18.20.5
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.5
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+Node.js v18.20.5
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.5
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+Error: Cannot find module '/app/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+Node.js v18.20.5

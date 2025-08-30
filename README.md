@@ -536,4 +536,4 @@ This project is licensed under the MIT License.
 
 **FeetCode** - Where coding meets personality! 🚀✨
 
-Made with ❤️ for developers who want to practice coding with style.
+Made with ❤️ for developers who want to practice coding with style. 
