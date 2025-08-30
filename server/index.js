@@ -30,6 +30,14 @@ app.use('/api/submissions', require('./routes/submissions-supabase'));
 app.use('/api/users', require('./routes/users-supabase'));
 
 // Health check
+app.get('/', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    message: 'FeetCode server is running!',
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
