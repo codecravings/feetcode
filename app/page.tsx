@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useVibe } from '../hooks/useVibe'
+import { useVibe } from '../hooks/useVibe.tsx'
 import Link from 'next/link'
 import { 
   Code2, 

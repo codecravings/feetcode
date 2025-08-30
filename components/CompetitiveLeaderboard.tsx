@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Crown, Flame, Zap, Target, Trophy, Sword, Star, TrendingUp } from 'lucide-react'
-import { useVibe } from '../hooks/useVibe'
+import { useVibe } from '../hooks/useVibe.tsx'
 
 interface Player {
   rank: number

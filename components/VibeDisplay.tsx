@@ -1,6 +1,6 @@
 'use client'
 
-import { useVibeContent } from '../hooks/useVibe'
+import { useVibeContent } from '../hooks/useVibe.tsx'
 
 interface VibeDisplayProps {
   category: string

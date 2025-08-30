@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { TrendingUp, Clock, Zap, Target, Users, Crown, Flame, Share2 } from 'lucide-react'
-import { useVibe } from '../hooks/useVibe'
+import { useVibe } from '../hooks/useVibe.tsx'
 
 export default function ViralStats() {
   const { vibe } = useVibe()

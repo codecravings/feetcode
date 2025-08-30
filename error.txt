@@ -1,6 +1,6 @@
 stage-0
 RUN npm run build
-8s
+7s
 npm warn config production Use `--omit=dev` instead.
 > feetcode@0.1.0 build
 > next build

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { useVibe } from '../../hooks/useVibe'
+import { useVibe } from '../../hooks/useVibe.tsx'
 import { 
   Coins, 
   Trophy, 

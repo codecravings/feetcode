@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Calendar, Flame, Trophy, Clock, Star } from 'lucide-react'
-import { useVibe } from '../hooks/useVibe'
+import { useVibe } from '../hooks/useVibe.tsx'
 
 interface DailyChallengeCardProps {
   onStart: () => void

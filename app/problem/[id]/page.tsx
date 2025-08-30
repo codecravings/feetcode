@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import { useVibe } from '../../../hooks/useVibe'
+import { useVibe } from '../../../hooks/useVibe.tsx'
 import ModernNavbar from '../../../components/modern/Navbar'
 import Link from 'next/link'
 import { 
