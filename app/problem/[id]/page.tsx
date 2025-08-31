@@ -24,7 +24,7 @@ import {
   Activity,
   BarChart,
   Timer,
-  Memory,
+  HardDrive,
   AlertTriangle,
   TrendingUp
 } from 'lucide-react'
@@ -621,7 +621,7 @@ This is giving main character energy - you got this! 💪`
                               </div>
                             </div>
                             <div className="flex items-center space-x-2">
-                              <Memory className="h-4 w-4 text-purple-500" />
+                              <HardDrive className="h-4 w-4 text-purple-500" />
                               <div>
                                 <div className="text-sm font-medium">{executionSummary.memory}</div>
                                 <div className="text-xs text-muted-foreground">Memory</div>
