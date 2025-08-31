@@ -7,6 +7,7 @@ import {
   Code2, 
   Trophy, 
   Users, 
+  User,
   Zap, 
   ArrowRight, 
   Check, 
@@ -116,15 +117,24 @@ export default function ModernHome() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-              <Link href="/problems" className="btn-primary text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center space-x-2">
-                <span>{currentContent.cta}</span>
-                <ArrowRight className="h-5 w-5" />
+              <Link href="/auth" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center space-x-2 font-bold">
+                <User className="h-6 w-6" />
+                <span>
+                  {vibe === 'genz' ? 'Join the Squad! ✨' :
+                   vibe === 'humorous' ? 'Start the Adventure! 🚀' :
+                   'Sign Up Free'}
+                </span>
               </Link>
               
-              <button className="btn-secondary text-lg px-8 py-4 rounded-xl flex items-center space-x-2 group">
+              <Link href="/problems" className="btn-secondary text-lg px-8 py-4 rounded-xl flex items-center space-x-2 group">
                 <PlayCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span>Watch Demo</span>
-              </button>
+                <span>Try Problems</span>
+              </Link>
+
+              <Link href="/auth" className="text-primary hover:text-primary/80 font-medium flex items-center space-x-1">
+                <span>Already a member? Sign in</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
 
             {/* Features Grid */}

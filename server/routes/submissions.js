@@ -3,10 +3,10 @@ const Submission = require('../models/Submission');
 const Problem = require('../models/Problem');
 const User = require('../models/User');
 const { auth, optionalAuth } = require('../middleware/auth');
-const CodeExecutor = require('../services/codeExecutor');
+const EnhancedCodeExecutor = require('../services/enhancedCodeExecutor');
 const router = express.Router();
 
-const codeExecutor = new CodeExecutor();
+const codeExecutor = new EnhancedCodeExecutor();
 
 // Submit code for a problem
 router.post('/', auth, async (req, res) => {
@@ -94,6 +94,9 @@ router.post('/', auth, async (req, res) => {
       }
     }
 
+    // Format response like LeetCode
+    const formattedResult = codeExecutor.formatLeetCodeResult(executionResult);
+    
     res.status(201).json({
       message: 'Code submitted successfully',
       submission: {
@@ -104,7 +107,8 @@ router.post('/', auth, async (req, res) => {
         passedTestCases: submission.passedTestCases,
         totalTestCases: submission.totalTestCases,
         submittedAt: submission.submittedAt
-      }
+      },
+      result: formattedResult
     });
 
   } catch (error) {
@@ -300,19 +304,16 @@ router.post('/run', optionalAuth, async (req, res) => {
       });
     }
 
+    // Format response like LeetCode
+    const formattedResult = codeExecutor.formatLeetCodeResult(executionResult);
+    
     res.json({
-      results: executionResult.testResults.map(result => ({
-        passed: result.passed,
-        input: testCases[result.testCaseIndex].input,
-        expected: result.expectedOutput,
-        actual: result.actualOutput,
-        runtime: result.executionTime,
-        error: result.error
-      })),
+      results: executionResult.testResults,
       status: executionResult.status,
       totalExecutionTime: executionResult.totalExecutionTime,
       passedTestCases: executionResult.passedTestCases,
-      totalTestCases: executionResult.totalTestCases
+      totalTestCases: executionResult.totalTestCases,
+      leetcode: formattedResult
     });
 
   } catch (error) {

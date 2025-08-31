@@ -18,7 +18,15 @@ import {
   Star,
   Lightbulb,
   Code,
-  Terminal
+  Terminal,
+  Zap,
+  Award,
+  Activity,
+  BarChart,
+  Timer,
+  Memory,
+  AlertTriangle,
+  TrendingUp
 } from 'lucide-react'
 import MonacoEditor from '@monaco-editor/react'
 
@@ -45,11 +53,23 @@ interface Problem {
 }
 
 interface TestResult {
-  passed: boolean
+  testCase: number
   input: string
-  expected: string
-  actual: string
-  runtime?: number
+  expectedOutput: string
+  actualOutput: string
+  passed: boolean
+  executionTime: number
+  memoryUsage?: number
+  error?: string
+  errorType?: string
+}
+
+interface ExecutionSummary {
+  status: string
+  runtime: string
+  memory: string
+  testsPassed: string
+  message: string
 }
 
 export default function ProblemPage() {
@@ -62,7 +82,9 @@ export default function ProblemPage() {
   const [isRunning, setIsRunning] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [testResults, setTestResults] = useState<TestResult[]>([])
+  const [executionSummary, setExecutionSummary] = useState<ExecutionSummary | null>(null)
   const [showResults, setShowResults] = useState(false)
+  const [activeTab, setActiveTab] = useState<'testcases' | 'result' | 'submissions'>('testcases')
 
   useEffect(() => {
     fetchProblem()
@@ -171,6 +193,7 @@ This is giving main character energy - you got this! 💪`
     
     setIsRunning(true)
     setShowResults(true)
+    setActiveTab('result')
     
     try {
       const response = await fetch('/api/server/submissions/run', {
@@ -179,19 +202,44 @@ This is giving main character energy - you got this! 💪`
         body: JSON.stringify({
           code,
           language: selectedLanguage,
-          testCases: problem.testCases.slice(0, 2) // Run first 2 test cases
+          testCases: problem.testCases.slice(0, 3) // Run first 3 test cases
         })
       })
 
       const data = await response.json()
       setTestResults(data.results || [])
+      setExecutionSummary(data.leetcode || null)
     } catch (error) {
       console.error('Failed to run code:', error)
-      // Mock results for demo
-      setTestResults([
-        { passed: true, input: '[2,7,11,15], 9', expected: '[0,1]', actual: '[0,1]', runtime: 68 },
-        { passed: false, input: '[3,2,4], 6', expected: '[1,2]', actual: 'undefined', runtime: 72 }
-      ])
+      // Enhanced mock results for demo
+      const mockResults = [
+        { 
+          testCase: 1,
+          input: '[2,7,11,15], 9', 
+          expectedOutput: '[0,1]', 
+          actualOutput: '[0,1]', 
+          passed: true,
+          executionTime: 68,
+          memoryUsage: 12
+        },
+        { 
+          testCase: 2,
+          input: '[3,2,4], 6', 
+          expectedOutput: '[1,2]', 
+          actualOutput: 'undefined', 
+          passed: false,
+          executionTime: 72,
+          error: 'Runtime Error: Cannot read property of undefined'
+        }
+      ]
+      setTestResults(mockResults)
+      setExecutionSummary({
+        status: 'Wrong Answer',
+        runtime: '70ms',
+        memory: '12.5KB',
+        testsPassed: '1/2',
+        message: '1 out of 2 test cases passed. Almost there!'
+      })
     } finally {
       setIsRunning(false)
     }
@@ -201,6 +249,8 @@ This is giving main character energy - you got this! 💪`
     if (!problem) return
     
     setIsSubmitting(true)
+    setShowResults(true)
+    setActiveTab('result')
     
     try {
       const token = localStorage.getItem('feetcode_token')
@@ -218,13 +268,14 @@ This is giving main character energy - you got this! 💪`
       })
 
       const data = await response.json()
-      if (data.accepted) {
-        // Success state
-        alert('Accepted! Great job! 🎉')
-      } else {
-        // Show submission results
-        setTestResults(data.results || [])
-        setShowResults(true)
+      setTestResults(data.submission?.testResults || [])
+      setExecutionSummary(data.result || null)
+      
+      if (data.result?.status === 'Accepted') {
+        // Celebration animation
+        setTimeout(() => {
+          alert('🎉 Accepted! Congratulations! Your solution passed all test cases!')
+        }, 500)
       }
     } catch (error) {
       console.error('Failed to submit code:', error)
@@ -360,96 +411,329 @@ This is giving main character energy - you got this! 💪`
 
           {/* Code Editor */}
           <div className="space-y-4">
-            {/* Language Selector */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
+            {/* Enhanced Language Selector & Actions */}
+            <div className="flex items-center justify-between bg-card p-4 rounded-lg border">
+              <div className="flex items-center space-x-3">
+                <Code className="h-5 w-5 text-primary" />
                 <select
                   value={selectedLanguage}
                   onChange={(e) => handleLanguageChange(e.target.value)}
-                  className="input"
+                  className="bg-muted border border-border rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                 >
-                  <option value="javascript">JavaScript</option>
-                  <option value="python">Python</option>
-                  <option value="java">Java</option>
+                  <option value="javascript">🟨 JavaScript</option>
+                  <option value="python">🐍 Python</option>
+                  <option value="java">☕ Java</option>
                 </select>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
                 <button
                   onClick={runCode}
                   disabled={isRunning}
-                  className="btn-secondary flex items-center space-x-2"
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                    isRunning 
+                      ? 'bg-blue-100 text-blue-600 cursor-not-allowed' 
+                      : 'bg-blue-500 text-white hover:bg-blue-600 transform hover:scale-105 shadow-md hover:shadow-lg'
+                  }`}
                 >
-                  <Play className="h-4 w-4" />
-                  <span>{isRunning ? 'Running...' : 'Run'}</span>
+                  {isRunning ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-blue-300 border-t-blue-600 rounded-full animate-spin" />
+                      <span>Running...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Play className="h-4 w-4" />
+                      <span>Run Code</span>
+                    </>
+                  )}
                 </button>
                 <button
                   onClick={submitCode}
                   disabled={isSubmitting}
-                  className="btn-primary flex items-center space-x-2"
+                  className={`flex items-center space-x-2 px-6 py-2 rounded-lg font-bold transition-all ${
+                    isSubmitting
+                      ? 'bg-gradient-to-r from-purple-300 to-pink-300 text-purple-600 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 shadow-lg hover:shadow-xl'
+                  }`}
                 >
-                  <Upload className="h-4 w-4" />
-                  <span>{isSubmitting ? 'Submitting...' : 'Submit'}</span>
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-purple-300 border-t-purple-600 rounded-full animate-spin" />
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Upload className="h-4 w-4" />
+                      <span>Submit Solution</span>
+                    </>
+                  )}
                 </button>
               </div>
             </div>
 
-            {/* Editor */}
-            <div className="card p-0 overflow-hidden" style={{ height: '400px' }}>
-              <MonacoEditor
-                height="400px"
-                language={selectedLanguage === 'javascript' ? 'javascript' : selectedLanguage}
-                value={code}
-                onChange={(value) => setCode(value || '')}
-                theme="vs-dark"
-                options={{
-                  minimap: { enabled: false },
-                  fontSize: 14,
-                  lineNumbers: 'on',
-                  wordWrap: 'on',
-                  automaticLayout: true,
-                }}
-              />
+            {/* Enhanced Code Editor */}
+            <div className="relative">
+              <div className="absolute top-3 right-3 z-10 flex items-center space-x-2 bg-black/80 backdrop-blur-sm rounded-lg px-3 py-1">
+                <Zap className="h-3 w-3 text-yellow-400" />
+                <span className="text-xs text-white font-medium">Enhanced Editor</span>
+              </div>
+              <div className="card p-0 overflow-hidden border-2 border-primary/20 hover:border-primary/40 transition-colors" style={{ height: '450px' }}>
+                <MonacoEditor
+                  height="450px"
+                  language={selectedLanguage === 'javascript' ? 'javascript' : selectedLanguage}
+                  value={code}
+                  onChange={(value) => setCode(value || '')}
+                  theme="vs-dark"
+                  options={{
+                    minimap: { enabled: false },
+                    fontSize: 15,
+                    lineNumbers: 'on',
+                    wordWrap: 'on',
+                    automaticLayout: true,
+                    suggestOnTriggerCharacters: true,
+                    quickSuggestions: true,
+                    formatOnPaste: true,
+                    formatOnType: true,
+                    tabSize: 2,
+                    insertSpaces: true,
+                    bracketPairColorization: { enabled: true },
+                    guides: {
+                      bracketPairs: true,
+                      indentation: true
+                    },
+                    smoothScrolling: true,
+                    cursorBlinking: 'smooth',
+                    cursorSmoothCaretAnimation: 'on',
+                    contextmenu: true,
+                    scrollbar: {
+                      verticalScrollbarSize: 8,
+                      horizontalScrollbarSize: 8
+                    }
+                  }}
+                />
+              </div>
             </div>
 
-            {/* Test Results */}
+            {/* Enhanced Test Results - LeetCode Style */}
             {showResults && (
-              <div className="card p-6">
-                <h3 className="font-semibold mb-4 flex items-center space-x-2">
-                  <Terminal className="h-5 w-5" />
-                  <span>Test Results</span>
-                </h3>
-                <div className="space-y-3">
-                  {testResults.map((result, index) => (
-                    <div
-                      key={index}
-                      className={`p-4 rounded-lg border-l-4 ${
-                        result.passed
-                          ? 'border-success bg-success/10'
-                          : 'border-destructive bg-destructive/10'
+              <div className="card p-0 overflow-hidden">
+                {/* Tabs */}
+                <div className="border-b border-border">
+                  <div className="flex">
+                    <button
+                      onClick={() => setActiveTab('testcases')}
+                      className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+                        activeTab === 'testcases'
+                          ? 'border-b-2 border-primary text-primary bg-primary/5'
+                          : 'text-muted-foreground hover:text-foreground'
                       }`}
                     >
-                      <div className="flex items-center space-x-2 mb-2">
-                        {result.passed ? (
-                          <CheckCircle className="h-5 w-5 text-success" />
-                        ) : (
-                          <XCircle className="h-5 w-5 text-destructive" />
-                        )}
-                        <span className="font-medium">
-                          Test Case {index + 1} {result.passed ? 'Passed' : 'Failed'}
-                        </span>
-                        {result.runtime && (
-                          <span className="text-sm text-muted-foreground">
-                            ({result.runtime}ms)
-                          </span>
-                        )}
+                      <div className="flex items-center justify-center space-x-2">
+                        <Code className="h-4 w-4" />
+                        <span>Test Cases</span>
                       </div>
-                      <div className="text-sm space-y-1">
-                        <div><strong>Input:</strong> {result.input}</div>
-                        <div><strong>Expected:</strong> {result.expected}</div>
-                        <div><strong>Actual:</strong> {result.actual}</div>
+                    </button>
+                    <button
+                      onClick={() => setActiveTab('result')}
+                      className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+                        activeTab === 'result'
+                          ? 'border-b-2 border-primary text-primary bg-primary/5'
+                          : 'text-muted-foreground hover:text-foreground'
+                      }`}
+                    >
+                      <div className="flex items-center justify-center space-x-2">
+                        <Terminal className="h-4 w-4" />
+                        <span>Result</span>
+                      </div>
+                    </button>
+                    <button
+                      onClick={() => setActiveTab('submissions')}
+                      className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+                        activeTab === 'submissions'
+                          ? 'border-b-2 border-primary text-primary bg-primary/5'
+                          : 'text-muted-foreground hover:text-foreground'
+                      }`}
+                    >
+                      <div className="flex items-center justify-center space-x-2">
+                        <Activity className="h-4 w-4" />
+                        <span>Submissions</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Tab Content */}
+                <div className="p-6">
+                  {activeTab === 'testcases' && (
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-2 mb-4">
+                        <Code className="h-5 w-5 text-primary" />
+                        <span className="font-medium">Sample Test Cases</span>
+                      </div>
+                      {problem?.examples.map((example, index) => (
+                        <div key={index} className="bg-muted/30 p-4 rounded-lg space-y-2">
+                          <div className="font-medium text-sm text-muted-foreground">Case {index + 1}</div>
+                          <div className="text-sm">
+                            <div className="mb-2"><span className="font-medium">Input:</span> <code className="bg-muted px-2 py-1 rounded text-xs">{example.input}</code></div>
+                            <div><span className="font-medium">Output:</span> <code className="bg-muted px-2 py-1 rounded text-xs">{example.output}</code></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {activeTab === 'result' && (
+                    <div className="space-y-6">
+                      {/* Execution Summary */}
+                      {executionSummary && (
+                        <div className={`p-6 rounded-xl border-2 ${
+                          executionSummary.status === 'Accepted' 
+                            ? 'border-success bg-success/5' 
+                            : 'border-destructive bg-destructive/5'
+                        }`}>
+                          <div className="flex items-center space-x-3 mb-4">
+                            {executionSummary.status === 'Accepted' ? (
+                              <div className="w-12 h-12 bg-success rounded-full flex items-center justify-center">
+                                <CheckCircle className="h-6 w-6 text-white" />
+                              </div>
+                            ) : (
+                              <div className="w-12 h-12 bg-destructive rounded-full flex items-center justify-center">
+                                <XCircle className="h-6 w-6 text-white" />
+                              </div>
+                            )}
+                            <div>
+                              <h3 className={`text-xl font-bold ${
+                                executionSummary.status === 'Accepted' ? 'text-success' : 'text-destructive'
+                              }`}>
+                                {executionSummary.status}
+                              </h3>
+                              <p className="text-sm text-muted-foreground">{executionSummary.message}</p>
+                            </div>
+                          </div>
+
+                          {/* Performance Stats */}
+                          <div className="grid grid-cols-3 gap-4">
+                            <div className="flex items-center space-x-2">
+                              <Timer className="h-4 w-4 text-blue-500" />
+                              <div>
+                                <div className="text-sm font-medium">{executionSummary.runtime}</div>
+                                <div className="text-xs text-muted-foreground">Runtime</div>
+                              </div>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <Memory className="h-4 w-4 text-purple-500" />
+                              <div>
+                                <div className="text-sm font-medium">{executionSummary.memory}</div>
+                                <div className="text-xs text-muted-foreground">Memory</div>
+                              </div>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <Award className="h-4 w-4 text-green-500" />
+                              <div>
+                                <div className="text-sm font-medium">{executionSummary.testsPassed}</div>
+                                <div className="text-xs text-muted-foreground">Test Cases</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Individual Test Results */}
+                      <div className="space-y-3">
+                        {testResults.map((result, index) => (
+                          <div
+                            key={index}
+                            className={`p-5 rounded-lg border transition-all hover:shadow-md ${
+                              result.passed
+                                ? 'border-success bg-success/5 hover:bg-success/10'
+                                : 'border-destructive bg-destructive/5 hover:bg-destructive/10'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between mb-3">
+                              <div className="flex items-center space-x-3">
+                                {result.passed ? (
+                                  <CheckCircle className="h-6 w-6 text-success animate-pulse" />
+                                ) : (
+                                  <XCircle className="h-6 w-6 text-destructive animate-pulse" />
+                                )}
+                                <div>
+                                  <h4 className="font-semibold">Test Case {result.testCase}</h4>
+                                  <p className={`text-sm ${result.passed ? 'text-success' : 'text-destructive'}`}>
+                                    {result.passed ? 'Passed ✨' : 'Failed'}
+                                  </p>
+                                </div>
+                              </div>
+                              
+                              <div className="flex items-center space-x-4 text-sm">
+                                {result.executionTime && (
+                                  <div className="flex items-center space-x-1 text-muted-foreground">
+                                    <Clock className="h-3 w-3" />
+                                    <span>{result.executionTime}ms</span>
+                                  </div>
+                                )}
+                                {result.memoryUsage && (
+                                  <div className="flex items-center space-x-1 text-muted-foreground">
+                                    <BarChart className="h-3 w-3" />
+                                    <span>{result.memoryUsage}KB</span>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+
+                            <div className="space-y-3 text-sm">
+                              <div className="grid gap-2">
+                                <div>
+                                  <span className="font-medium text-muted-foreground">Input:</span>
+                                  <code className="ml-2 bg-muted px-2 py-1 rounded text-xs font-mono">
+                                    {result.input}
+                                  </code>
+                                </div>
+                                <div>
+                                  <span className="font-medium text-muted-foreground">Expected:</span>
+                                  <code className="ml-2 bg-muted px-2 py-1 rounded text-xs font-mono text-success">
+                                    {result.expectedOutput}
+                                  </code>
+                                </div>
+                                <div>
+                                  <span className="font-medium text-muted-foreground">Output:</span>
+                                  <code className={`ml-2 px-2 py-1 rounded text-xs font-mono ${
+                                    result.passed ? 'bg-success/10 text-success' : 'bg-destructive/10 text-destructive'
+                                  }`}>
+                                    {result.actualOutput || 'null'}
+                                  </code>
+                                </div>
+                              </div>
+                              
+                              {result.error && (
+                                <div className="mt-3 p-3 bg-destructive/10 rounded-lg border border-destructive/20">
+                                  <div className="flex items-start space-x-2">
+                                    <AlertTriangle className="h-4 w-4 text-destructive flex-shrink-0 mt-0.5" />
+                                    <div>
+                                      <div className="font-medium text-destructive text-xs mb-1">
+                                        {result.errorType || 'Runtime Error'}
+                                      </div>
+                                      <div className="text-xs text-muted-foreground font-mono">
+                                        {result.error}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  ))}
+                  )}
+
+                  {activeTab === 'submissions' && (
+                    <div className="text-center py-12">
+                      <Activity className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                      <h3 className="text-lg font-medium mb-2">Submission History</h3>
+                      <p className="text-muted-foreground mb-4">Track your progress and compare solutions</p>
+                      <button className="btn-primary">View All Submissions</button>
+                    </div>
+                  )}
                 </div>
               </div>
             )}

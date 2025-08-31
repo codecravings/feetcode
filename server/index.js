@@ -28,6 +28,7 @@ app.use('/api/auth', require('./routes/auth-supabase'));
 app.use('/api/problems', require('./routes/problems-supabase'));
 app.use('/api/submissions', require('./routes/submissions-supabase'));
 app.use('/api/users', require('./routes/users-supabase'));
+app.use('/api/streaks', require('./routes/streaks-supabase'));
 
 // Health check
 app.get('/', (req, res) => {

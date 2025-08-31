@@ -73,10 +73,23 @@ router.post('/', async (req, res) => {
     const allPassed = executionResult.status === 'accepted';
     const status = executionResult.status;
 
-    // In a real implementation, you would:
-    // 1. Insert the submission into the submissions table
-    // 2. Update user stats
-    // 3. Update problem stats
+    // Update streak if submission was accepted
+    if (allPassed) {
+      try {
+        const updateStreakResponse = await fetch(`http://localhost:${process.env.PORT || 5001}/api/streaks/demo123/update`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ problemSolved: true })
+        });
+        
+        if (updateStreakResponse.ok) {
+          const streakData = await updateStreakResponse.json();
+          response.streakUpdate = streakData;
+        }
+      } catch (error) {
+        console.error('Failed to update streak:', error);
+      }
+    }
 
     // Format results for response
     const formattedResults = executionResult.testResults.map(result => ({

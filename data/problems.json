@@ -1948,7 +1948,7 @@
     ]
   },
   {
-    "id": "21",
+    "id": "48",
     "title": "Maximum Depth of Binary Tree",
     "difficulty": "Easy",
     "category": "Tree",
@@ -1995,7 +1995,7 @@
     ]
   },
   {
-    "id": "22",
+    "id": "49",
     "title": "Graph Valid Tree",
     "difficulty": "Medium",
     "category": "Graph",

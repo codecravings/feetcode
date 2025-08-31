@@ -224,19 +224,13 @@ export default function ModernNavbar() {
               </div>
             ) : (
               <div className="flex items-center space-x-2">
-                <button 
-                  onClick={() => setShowAuthModal(true)}
-                  className="btn-secondary"
-                >
+                <Link href="/auth" className="btn-secondary">
                   Sign In
-                </button>
-                <button 
-                  onClick={() => setShowAuthModal(true)}
-                  className="btn-primary flex items-center space-x-1"
-                >
+                </Link>
+                <Link href="/auth" className="btn-primary flex items-center space-x-1">
                   <Sparkles className="h-4 w-4" />
                   <span>Get Started</span>
-                </button>
+                </Link>
               </div>
             )}
           </div>
