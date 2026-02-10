@@ -51,7 +51,10 @@ interface RecentSubmission {
 }
 
 export default function DashboardPage() {
-const { vibe } = useVibe() const [user, setUser] = useState<any>(null) const [userStats, setUserStats] = useState<UserStats | null>(null) const [recentSubmissions, setRecentSubmissions] = useState<RecentSubmission[]>([]) const [loading, setLoading] = useState(true)
+  const { vibe } = useVibe() 
+  const [user, setUser] = useState<any>(null) 
+  const [userStats, setUserStats] = useState<UserStats | null>(null) 
+  const [recentSubmissions, setRecentSubmissions] = useState<RecentSubmission[]>([]) const [loading, setLoading] = useState(true)
   useEffect(() => {
     checkAuth()
     fetchDashboardData()
