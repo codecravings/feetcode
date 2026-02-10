@@ -51,11 +51,7 @@ interface RecentSubmission {
 }
 
 export default function DashboardPage() {
-Real Stockfish Analysis: Not some wannabe engine - we're talking about the REAL DEAL™
-Accuracy Calculations: Find out exactly how much you disappointed the chess gods
-Blunder Detection: We'll point out your mistakes with surgical precision and zero mercy
-Move Quality Assessment: From "Brilliant!" to "What were you thinking?!"
-
+const { vibe } = useVibe() const [user, setUser] = useState<any>(null) const [userStats, setUserStats] = useState<UserStats | null>(null) const [recentSubmissions, setRecentSubmissions] = useState<RecentSubmission[]>([]) const [loading, setLoading] = useState(true)
   useEffect(() => {
     checkAuth()
     fetchDashboardData()
