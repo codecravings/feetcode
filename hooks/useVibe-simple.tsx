@@ -43,7 +43,6 @@ export function VibeProvider({ children }: VibeProviderProps) {
     </VibeContext.Provider>
   )
 }
-#throw
 export function useVibe() {
   const context = useContext(VibeContext)
   if (!context) {
