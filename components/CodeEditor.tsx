@@ -19,8 +19,18 @@ interface TestResult {
   error?: string
   executionTime?: number
 }
-
-const languageOptions = [
+   472 -                    override fun onTick(millisUntilFi
+          -nished: Long) {                                      
+      473 -                        countdownText.text = "Wait ${
+          -millisUntilFinished / 1000} seconds..."              
+      474 -                    }                                
+      475 -                    override fun onFinish() {        
+      476 -                        countdownText.visibility = Vi
+          -ew.GONE                                              
+      477 -                        dismissButton.visibility = Vi
+          -ew.VISIBLE    
+     
+cons languageOptions = [
   { id: 'javascript', name: 'JavaScript', extension: 'js' },
   { id: 'python', name: 'Python', extension: 'py' },
   { id: 'java', name: 'Java', extension: 'java' },
