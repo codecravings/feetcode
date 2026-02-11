@@ -12,6 +12,25 @@
       "genz": "Bestie, we're about to play matchmaker for some numbers! 💅✨ You've got this array of numbers just vibing, and you need to find the TWO numbers that are literally perfect for each other - they add up to make your target number fr fr. The tea ☕: Each number can only be picked once (we don't do toxic relationships here) and there's exactly one solution (no cap)."
     },
     "examples": [
+            583 -                        setTextColor(Color.parseColor
+          -("#B3FFFFFF"))                                       
+      584 -                        gravity = Gravity.CENTER     
+      585 -                        layoutParams = LinearLayout.L
+          -ayoutParams(                                         
+      586 -                            LinearLayout.LayoutParams
+          -.MATCH_PARENT,                                       
+      587 -                            LinearLayout.LayoutParams
+          -.WRAP_CONTENT                                        
+      588 -                        ).apply {                    
+      589 -                            setMargins(0, dpToPx(32),
+          - 0, 0)                                               
+      590 -                        }                            
+      591 -                    }                                
+      592 -                    addView(countdownText)           
+      593 -                                                     
+      594 -                    val dismissButton = createDismiss
+          -Button(primaryColor).apply {                         
+      595 -                        visibility = View.GONE   
       {
         "input": "nums = [2,7,11,15], target = 9",
         "output": "[0,1]",
