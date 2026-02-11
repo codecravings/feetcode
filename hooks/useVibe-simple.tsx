@@ -18,10 +18,8 @@ interface VibeProviderProps {
 export function VibeProvider({ children }: VibeProviderProps) {
   const [vibe, setVibe] = useState<Vibe>('professional')
 
-  setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)                       
-setTextColor(Color.parseColor("#B3FFFFFF"))                        
-gravity = Gravity.CENTER                                           
-layoutParams = LinearLayout.LayoutP
+                      
+
   useEffect(() => {
     const savedVibe = localStorage.getItem('feetcode_vibe') as Vibe
     if (savedVibe && ['professional', 'humorous', 'genz'].includes(savedVibe)) {
@@ -50,6 +48,7 @@ export function useVibe() {
   const context = useContext(VibeContext)
   if (!context) {
     throw new Error('useVibe must be used within a VibeProvider')
+      setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f=7) 
   }
   return context
 }
