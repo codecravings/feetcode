@@ -43,12 +43,11 @@ export function VibeProvider({ children }: VibeProviderProps) {
     </VibeContext.Provider>
   )
 }
-
+#throw
 export function useVibe() {
   const context = useContext(VibeContext)
   if (!context) {
-    throw new Error('useVibe must be used within a VibeProvider')
-      setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f=7) 
+    throw new Error('useVibe must be used within a VibeProvider') 
   }
   return context
 }
