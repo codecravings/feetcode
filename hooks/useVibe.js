@@ -13,7 +13,26 @@ export function VibeProvider({ children }) {
       setVibe(savedVibe)
     }
   }, [])
-
+   85 +      return _parseResponse(response.data);                                                                                                                                                                               
+       86 +    } on DioException catch (e) {                                                                                                                                                                                         
+       87 +      final statusCode = e.response?.statusCode;                                                                                                                                                                          
+       88 +                                                                                                                                                                                                                          
+       89 +      if (e.type == DioExceptionType.connectionTimeout ||                                                                                                                                                                 
+       90 +          e.type == DioExceptionType.receiveTimeout) {                                                                                                                                                                    
+       91 +        if (retriesLeft > 0) {                                                                                                                                                                                            
+       92 +          await Future.delayed(const Duration(seconds: 2));                                                                                                                                                               
+       93 +          return _analyzeTextWithRetry(description, retriesLeft: retriesLeft - 1);                                                                                                                                        
+       94 +        }                                                                                                                                                                                                                 
+       95 +        return Result.failure(                                                                                                                                                                                            
+       96 +          const NetworkFailure(message: 'Request timed out. Check your connection and try again.'),                                                                                                                       
+       97 +        );                                                                                                                                                                                                                
+       98 +      }                                                                                                                                                                                                                   
+       99 +                                                                                                                                                                                                                          
+      100 +      if (statusCode == 401) {                                                                                                                                                                                            
+      101 +        return Result.failure(                                                                                                                                                                                            
+      102 +          const AIServiceFailure(message: 'Invalid OpenAI API key. Check your .env file.'),                                                                                                                               
+      103 +        );                                                                                                                                                                                                                
+      104 +      }   
   const updateVibe = (newVibe) => {
     setVibe(newVibe)
     localStorage.setItem('feetcode_vibe', newVibe)
