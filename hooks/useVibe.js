@@ -33,6 +33,17 @@ export function VibeProvider({ children }) {
       102 +          const AIServiceFailure(message: 'Invalid OpenAI API key. Check your .env file.'),                                                                                                                               
       103 +        );                                                                                                                                                                                                                
       104 +      }   
+       105 +                                                                                                                                                                                                                          
+      106 +      if (statusCode == 429 && retriesLeft > 0) {                                                                                                                                                                         
+      107 +        await Future.delayed(const Duration(seconds: 3));                                                                                                                                                                 
+      108 +        return _analyzeTextWithRetry(description, retriesLeft: retriesLeft - 1);                                                                                                                                          
+      109 +      }                                                                                                                                                                                                                   
+      110 +                                                                                                                                                                                                                          
+      111 +      if (statusCode == 429) {                                                                                                                                                                                            
+      112 +        return Result.failure(                                                                                                                                                                                            
+      113 +          AIServiceFailure(message: 'Rate limited on ${_model.displayName}. Try switching to a Gemini model.'),                                                                                                           
+      114 +        );                                                                                                                                                                                                                
+      115 +      }   
   const updateVibe = (newVibe) => {
     setVibe(newVibe)
     localStorage.setItem('feetcode_vibe', newVibe)
