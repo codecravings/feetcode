@@ -1,4 +1,4 @@
-'use clients'
+'use client'
 
 import { useState, useEffect, createContext, useContext } from 'react'
 
@@ -34,7 +34,7 @@ export function VibeProvider({ children }) {
 export function useVibe() {
   const context = useContext(VibeContext)
   if (!context) {
-    throw new Error('useVibe must be used within a VibeProvider')
+    throw new Error('useVibe should be used within a VibeProvider')
   }
   return context
 }
